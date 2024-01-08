@@ -22,7 +22,6 @@
       <a href="#" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
     </ul>
   </header>
-  <section>
       <div id="div-services">
         <img src="{% static 'images/barbearia.png' %}" alt="" class="img-home">
       </div>
@@ -35,41 +34,21 @@
           <a href="" class="btn-options"><li>Agendar Corte</li></a>
         </ul>
       </div>
-      
-      <div id="cards">
-        {% for service in services %}
-    
-      <div class="card">
-        {% if service.image %}
-        <img class="card-img-top" src="{{ service.image.url }}" alt="Card image cap">
-        {% endif %}
-        <div class="card-body">
-          <h5 class="card-title">{{ service.name }}</h5>
-          <p class="card-text">R$ {{ service.price }}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </section>
-
-  <div class="title-barber">
-    <h2>
-      Time
-    </h2>
+  <section id="card-service">
+    {% for service in services %}
+<div class="card" >
+    {% if service.image %}
+  <img class="card-img-top" src="{{ service.image.url }}" alt="Card image cap">
+    {% endif %}
+  <div class="card-body">
+    <h5 class="card-title">{{ service.name }}</h5>
+    <p class="card-text">R$ {{ service.price }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-
-  <main id="barbers">
-    {% for barber in barbers %}
-      <div class="card">
-        {% if barber.photo %}
-        <img class="card-img-top" src="{{ barber.photo.url }}" alt="Card image cap">
-        {% endif %}
-        <div class="card-body">
-          <h5 class="card-title">{{ barber.name }}</h5>
-        </div>
-      </div>
-      {% endfor %}
-    </main>
+</div>
+   {% endfor %}
+  </section>    
+    
+      
 </body>
 </html>

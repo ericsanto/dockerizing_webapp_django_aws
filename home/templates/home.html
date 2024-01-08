@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Inicio</title>
+</head>
+<body>
+  <header>
+    <div id="title">
+      <h1>Barbearia</h1>
+      <h1>Boa Vista</h1>
+    </div>
+
+    <ul>
+      <a href="#"><li>Inicio</li></a>
+      <a href="#"><li>Serviços</li></a>
+      <a href="#"><li>Sobre</li></a>
+      <a href="#"><li>Contato</li></a>
+      <a href="#" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+    </ul>
+  </header>
+  <section>
+      <div id="div-services">
+        <img src="{% static 'images/barbearia.png' %}" alt="" class="img-home">
+      </div>
+
+      <div class="options">
+        <ul>
+          <a href="" class="btn-options"><li>Serviços</li></a>
+          <a href="" class="btn-options"><li>Portifólio</li></a>
+          <a href="" class="btn-options"><li>Detalhes</li></a>
+          <a href="" class="btn-options"><li>Agendar Corte</li></a>
+        </ul>
+      </div>
+      
+      <div id="cards">
+        {% for service in services %}
+    
+      <div class="card">
+        {% if service.image %}
+        <img class="card-img-top" src="{{ service.image.url }}" alt="Card image cap">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ service.name }}</h5>
+          <p class="card-text">R$ {{ service.price }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="title-barber">
+    <h2>
+      Time
+    </h2>
+  </div>
+
+  <main id="barbers">
+    {% for barber in barbers %}
+      <div class="card">
+        {% if barber.photo %}
+        <img class="card-img-top" src="{{ barber.photo.url }}" alt="Card image cap">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ barber.name }}</h5>
+        </div>
+      </div>
+      {% endfor %}
+    </main>
+</body>
+</html>

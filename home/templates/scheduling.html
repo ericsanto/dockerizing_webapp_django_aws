@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static '/css/style3.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+  <title>Agendamento</title>
+</head>
+<body>
+  <header>
+    <div id="title">
+      <h1>Barbearia</h1>
+      <h1>Boa Vista</h1>
+    </div>
+
+    <ul>
+      <a href="#"><li>Inicio</li></a>
+      <a href="#"><li>Serviços</li></a>
+      <a href="#"><li>Sobre</li></a>
+      <a href="#"><li>Contato</li></a>
+    </ul>
+  </header>
+
+  <main>
+    <form action="{% url 'scheduling' %}" method="post">
+      {% csrf_token %}
+      <label for="{{ form.day.id_for_label }}">Dia</label>
+      {{ form.day }}
+      {{ form.day.errors }}
+
+      <label for="{{ form.service.id_for_label }}">Serviço</label>
+      {{ form.service }}
+      {{ form.service.errors }}
+
+      <label for="{{ form.time.id_for_label }}">Horário</label>
+      {{ form.time }}
+      {{ form.time.errors }}
+
+      <input type="submit" value="Agendar" name="submit" class="submit-btn">
+    </form>
+  </main>
+
+</body>
+</html>
+
+
+ 

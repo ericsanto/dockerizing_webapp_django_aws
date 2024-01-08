@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  {% block header %}
+  <header>
+    <div id="title">
+      <h1>Barbearia</h1>
+      <h1>Boa Vista</h1>
+    </div>
+
+    <ul>
+      <a href="#"><li>Inicio</li></a>
+      <a href="#"><li>Serviços</li></a>
+      <a href="#"><li>Sobre</li></a>
+      <a href="#"><li>Contato</li></a>
+      <a href="#" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+    </ul>
+  </header>
+  {% endblock %}
+
+  {% block content %}
+  <main>
+    <aside>
+      <h2 id="first-title">Mude seu estilo</h2>
+      <h2>na Barbearia Boa Vista</h2>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sunt possimus repudiandae asperiores repellat dolore aspernatur doloribus expedita numquam libero dolores rerum sapiente est, 
+        commodi praesentium ipsa nobis nesciunt? Delectus.</p>
+
+        <form action="{% url 'create_user' %}" method="post">
+          {% csrf_token %}
+      
+          <label for="{{ form.first_name.id_for_label }}">Nome</label>
+          {{ form.first_name }}
+          {{ form.first_name.errors }}
+          
+          <label for="{{ form.last_name.id_for_label }}">Sobrenome</label>
+          {{ form.last_name }}
+          {{ form.last_name.errors }}
+      
+          <label for="{{ form.username.id_for_label }}">Nome do Usuário</label>
+          {{ form.username }}
+          {{ form.username.errors }}
+      
+          <label for="{{ form.email.id_for_label }}">Email</label>
+          {{ form.email }}
+          {{ form.email.errors }}
+      
+          <label for="{{ form.password1.id_for_label }}">Senha</label>
+          {{ form.password1 }}
+          {{ form.password1.errors }}
+      
+          <label for="{{ form.password2.id_for_label }}">Confirmação da Senha</label>
+          {{ form.password2 }}
+          {{ form.password2.errors }}
+      
+          <input class="btn-submit" type="submit" name="submit" value="Enviar">
+      </form>
+      
+    </aside>
+
+    <article>
+      <img src="{% static 'images/logo.jpeg' %}" alt="logo-barber">
+    </article>
+  </main>
+  {% endblock %}
+</body>
+</html>

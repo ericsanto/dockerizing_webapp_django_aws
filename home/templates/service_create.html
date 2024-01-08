@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  <title>Cadastrar Serviços</title>
+</head>
+<body>
+  {% block header %}
+  <header>
+    <div id="title">
+      <h1>Barbearia</h1>
+      <h1>Boa Vista</h1>
+    </div>
+
+    <ul>
+      <a href="#"><li>Inicio</li></a>
+      <a href="#"><li>Serviços</li></a>
+      <a href="#"><li>Sobre</li></a>
+      <a href="#"><li>Contato</li></a>
+    </ul>
+  </header>
+  {% endblock %}
+
+  {% block content %}
+    <h2 id="title-first">Cadastro de Serviços</h2>
+
+    <form method="post" class="form-create">
+      {% csrf_token %}
+
+      {{ form.non_field_errors }}
+
+
+      <label for="{{ form.name.id_for_label }}">Serviço</label>
+      {{ form.name }}
+      {{ form.name.errors }}
+      
+      <label for="{{ form.price.id_for_label }}">Preço</label>
+      {{ form.price }}
+      {{ form.price.errors }}
+
+      <input type="submit" value="Cadastrar Serviço" class="submit-btn">
+    </form>
+  {% endblock %}
+</body>
+</html>

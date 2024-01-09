@@ -38,10 +38,18 @@
       {{ form.time }}
       {{ form.time.errors }}
 
+      <label for="`{{ form.barber.id_for_label }}">Barbeiro</label>
+      {{ form.barber }}
+      {{ form.errors }}
+
+      <label for="{{ form.phone.id_for_label }}">Celular</label>
+      {{ form.phone }}
+      {{ form.errors }}
+
       <input type="submit" value="Agendar" name="submit" class="submit-btn">
     </form>
-  </main>
 
+  </main>
 </body>
 </html>
 

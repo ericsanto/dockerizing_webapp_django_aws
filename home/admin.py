@@ -13,3 +13,4 @@ class BarbersTeamAdmin(admin.ModelAdmin):
 admin.site.register(Services)
 admin.site.register(Scheduling, SchedulingAdmin)
 admin.site.register(BarbersTeam, BarbersTeamAdmin)
+admin.site.register(Portfolio)

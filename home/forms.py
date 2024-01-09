@@ -2,6 +2,7 @@ from django import forms
 from .models import *
 from django.forms import ValidationError
 from datetime import date
+import phonenumbers
 
 
 class ServiceCreateForm(forms.ModelForm):
@@ -31,7 +32,7 @@ class SchedulingForm(forms.ModelForm):
 
     class Meta:
         model = Scheduling
-        fields = ('day', 'service', 'time')
+        fields = ('day', 'service', 'time', 'barber', 'phone')
 
     def clean_day(self):
         day = self.cleaned_data.get('day')
@@ -49,6 +50,26 @@ class SchedulingForm(forms.ModelForm):
             raise forms.ValidationError(
                 f'Não é possível agendar para o horário , pois já passou!')
 
-        if Scheduling.objects.filter(time=time).exists():
-            raise forms.ValidationError(f'O horário está indisponível')
+        if Scheduling.objects.filter(time=time).exists() and Scheduling.objects.filter(day=day).exists():
+            raise forms.ValidationError(
+                f'O horário está indisponível para este dia')
         return time
+
+    '''def clean_phone(self):
+        phone = self.cleaned_data.get("phone")
+
+        try:
+            phone_parse = phonenumbers.parse(phone, '+55')
+
+            phonenumbers.is_valid_number(phone_parse)
+        except:
+            raise forms.ValidationError('Número de Celular está incorreto')
+
+        return phone'''
+
+
+class PortfolioForm(forms.ModelForm):
+
+    class Meta:
+        model = Portfolio
+        fields = '__all__'

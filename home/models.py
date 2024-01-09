@@ -64,6 +64,13 @@ class Scheduling(models.Model):
         max_length=255, verbose_name='Horários', choices=TIMES, blank=True, null=True)
     barber = models.ForeignKey(
         BarbersTeam, blank=True, null=True, on_delete=models.CASCADE)
+    phone = models.CharField('Celular', max_length=16, blank=True, null=True)
 
     def __str__(self):
         return self.user.username
+
+
+class Portfolio(models.Model):
+    description = models.TextField(blank=True, null=True)
+    image_portfolio = models.ImageField(
+        blank=True, null=True, upload_to='portfolio')

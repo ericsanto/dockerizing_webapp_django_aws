@@ -1,5 +1,7 @@
+from django.forms.models import BaseModelForm
+from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, DeleteView, CreateView, UpdateView
+from django.views.generic import *
 from .models import *
 from .forms import *
 from django.urls import reverse_lazy
@@ -38,5 +40,44 @@ class SchedulingCreateView(CreateView):
 class SchedulingUpdateView(UpdateView):
     model = Scheduling
     form_class = SchedulingForm
-    template_name = 'scheduling_'
-    pass
+    template_name = 'scheduling_update.html'
+    success_url = reverse_lazy('scheduling_detail')
+
+    def get_success_url(self) -> str:
+
+        return reverse_lazy('scheduling_detail', kwargs={'pk': self.object.pk})
+
+
+class UserSchedulingListView(ListView):
+    model = Scheduling
+    template_name = 'user_scheduling.html'
+    context_object_name = 'user_scheduling'
+
+    def get_queryset(self):
+        return Scheduling.objects.filter(user=self.request.user).order_by('-day')
+
+
+class UserSchedulingDetailView(DetailView):
+    model = Scheduling
+    template_name = 'scheduling_detail.html'
+
+
+class UserSchedulingDeleteView(DeleteView):
+    model = Scheduling
+    template_name = 'scheduling_delete.html'
+    success_url = reverse_lazy('home')
+
+
+class PortfolioCreateView(CreateView):
+    model = Portfolio
+    template_name = 'portfolio_create.html'
+    form_class = PortfolioForm
+
+    def get_success_url(self) -> str:
+        return reverse_lazy(f'portfolio', kwargs={'pk': self.object.pk})
+
+
+class PortfolioListView(ListView):
+    model = Portfolio
+    template_name = 'portfolio_list.html'
+    context_object_name = 'portfolio_objects'

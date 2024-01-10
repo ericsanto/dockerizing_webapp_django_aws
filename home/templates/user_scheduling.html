@@ -1,0 +1,30 @@
+{% extends "register.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+    {% block content %}
+      <div class="title-h2">
+        <h2 class="scheduling-title"> Meus Agendamentos </h2>
+      </div>
+      <div class="container">
+        {% for scheduling in user_scheduling %}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{scheduling.day}}</h5>
+            <p class="card-text">{{ scheduling.service }}.</p>
+            <a href="{% url 'scheduling_detail' scheduling.pk %}" class="btn btn-primary">Detalhes do Agendamento</a>
+          </div>
+        </div> 
+        {% endfor %}
+    {% endblock %}
+
+</body>
+</html>

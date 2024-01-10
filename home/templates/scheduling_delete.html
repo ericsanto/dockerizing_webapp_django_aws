@@ -1,0 +1,19 @@
+{% extends "register.html" %}
+
+
+{% block content %}
+
+  <div class="container-fluid">
+      <h2> Tem certeza?</h2>
+
+      <p><strong>Você tem certeza que quer cancelar o Agendamento marcado?</strong></p>
+
+      <form action="{% url 'scheduling_delete' scheduling.pk %}" method="post">
+        {% csrf_token %}
+
+        <button type="submit" class="confirm-delete">Sim</button>
+      </form>
+      
+      <a href="{% url 'scheduling_detail' scheduling.pk %}" ><button type="submit" class="cancel-delete">Não, me leve de volta</button></a>
+  </div>
+{% endblock %} 

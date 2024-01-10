@@ -1,0 +1,19 @@
+{% extends 'register.html' %}
+
+{% block content %}
+
+  <form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label for="{{ form.description.id_for_label }}">Descrição</label>
+    {{ form.description }}
+    {{ form.errors }}
+    
+    <label for="{{ form.image_portfolio.id_for_label }}">Imagem</label>
+    {{ form.image_portfolio }}
+    {{ form.errors }}
+
+    <input type="submit" name="submit" value="Postar">
+  </form>
+
+{% endblock %}

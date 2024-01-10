@@ -1,0 +1,21 @@
+{% extends 'register.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Data: {{scheduling.day}}</h5>
+        <p class="card-text">Serviço: {{scheduling.service}}</p>
+        <p class="card-text">Preço: {{scheduling.service.price}}</p>
+        <p class="card-text">Horário: {{scheduling.get_time_display}}</p>
+        {% if scheduling.berber %}
+        <p class="card-text">{{scheduling.barber}}</p>
+        {% endif %}
+        <a href="{% url 'scheduling_update' scheduling.pk %}" class="btn-primary" id="btn">Remarcar Agendamento</a>
+        <br>
+        <br>
+        <a href="{% url 'scheduling_delete' scheduling.pk %}" class="btn-primary" id="btn">Cancelar Agemdamento</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

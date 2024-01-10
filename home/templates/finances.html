@@ -1,0 +1,36 @@
+{% extends 'register.html' %}
+
+
+
+{% block content %}
+  <div class="title-h2">
+  <h2 class="title">Todos os agendamentos</h2>
+  </div>
+
+  <div class="container-all-schedulings ">
+    
+
+    <table id="table">
+      
+    <thead class="thead">
+      <tr>
+        <th scope="col" class="th">Cliente</th>
+        <th scope="col" class="th">Data do Serviço</th>
+        <th scope="col" class="th">Horário</th>
+        <th scope="col" class="th">Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for finance in finances_objects %}
+      <tr>
+        <th scope="row">{{finance.scheduling.user}}</th>
+        <td class="th"> {{ finance.scheduling.day }}</td>
+        <td class="th">{{ finance.scheduling.get_time_display }}</td>
+        <td class="th">{{ finance.scheduling.service.price }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'register.html' %}
+
+
+
+{% block content %}
+  <div class="container-portfolio">
+  {% for portfolio in portfolio_objects %}
+
+      <div class="image-portfolio">
+        {% if portfolio.image_portfolio %}
+          <img src="{{ portfolio.image_portfolio.url }}" alt="" class="img-portfolio">
+        {% endif %}
+      </div>
+
+      <p class="description">
+        {{ portfolio.description}}
+      </p>
+  {% endfor %}
+</div>
+{% endblock %}

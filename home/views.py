@@ -1,5 +1,3 @@
-from django.forms.models import BaseModelForm
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import *
 from .models import *
@@ -35,7 +33,7 @@ class SchedulingCreateView(CreateView):
         if self.request.user.is_authenticated:
             form.instance.user = self.request.user
 
-        super().form_valid(form)
+        return super().form_valid(form)
 
 
 class SchedulingUpdateView(UpdateView):

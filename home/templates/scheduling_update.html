@@ -1,0 +1,24 @@
+{% extends 'register.html' %}
+
+
+{% block content %}
+
+  <div class="container-fluid">
+    <form action="{% url 'scheduling_update' scheduling.pk %}" method="post" class="form-update">
+      {% csrf_token %}
+      
+      <label for="{{ form.day.id_for_label }}">Dia</label>
+      {{ form.day }}
+      {{ form.day.errors }}
+
+      <label for="{{ form.service.id_for_label }}" class="label-service">Serviço</label>
+      {{ form.service }}
+      {{ form.service.errors }}
+
+      <label for="{{ form.time.id_for_label }}" class="label-time">Horário</label>
+      {{ form.time }}
+      {{ form.time.errors }}
+      <input type="submit" value="Remarcar Agendamento" name="submit" class="submit-btn">
+    </form>
+  </div>    
+{%endblock%}

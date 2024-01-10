@@ -17,11 +17,13 @@
     </div>
 
     <ul>
-      <a href="#"><li>Inicio</li></a>
+      <a href="{% url 'home' %}"><li>Inicio</li></a>
       <a href="#"><li>Serviços</li></a>
       <a href="#"><li>Sobre</li></a>
       <a href="#"><li>Contato</li></a>
+      {% if not request.user.is_authenticated %}
       <a href="#" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+      {% endif %}
     </ul>
   </header>
   {% endblock %}

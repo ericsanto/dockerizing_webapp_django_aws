@@ -34,7 +34,8 @@ class SchedulingCreateView(CreateView):
     def form_valid(self, form):
         if self.request.user.is_authenticated:
             form.instance.user = self.request.user
-        return super().form_valid(form)
+
+        super().form_valid(form)
 
 
 class SchedulingUpdateView(UpdateView):
@@ -81,3 +82,9 @@ class PortfolioListView(ListView):
     model = Portfolio
     template_name = 'portfolio_list.html'
     context_object_name = 'portfolio_objects'
+
+
+class FinanceListView(ListView):
+    model = Finance
+    template_name = 'finances.html'
+    context_object_name = 'finances_objects'

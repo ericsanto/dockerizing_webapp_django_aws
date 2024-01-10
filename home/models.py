@@ -2,12 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from PIL import Image
+from django.contrib import messages
 
 
 class Services(models.Model):
     name = models.CharField(verbose_name='Nome',
                             max_length=255, blank=True, null=True)
-    price = models.FloatField(verbose_name='Preço', blank=True, null=True)
+    price = models.DecimalField(verbose_name='Preço',
+                                blank=True, null=True, default=0, decimal_places=2, max_digits=5)
     image = models.ImageField(blank=True, null=True, upload_to='serviços')
 
     class Meta:
@@ -22,8 +24,8 @@ class Services(models.Model):
         if self.image:
             img = Image.open(self.image.path)
 
-            new_width = 18 * 16
-            new_heigth = 200
+            new_width = 122
+            new_heigth = 117
 
             img = img.resize((new_width, new_heigth), Image.ADAPTIVE)
             img.save(self.image.path)
@@ -65,12 +67,33 @@ class Scheduling(models.Model):
     barber = models.ForeignKey(
         BarbersTeam, blank=True, null=True, on_delete=models.CASCADE)
     phone = models.CharField('Celular', max_length=16, blank=True, null=True)
+    scheduling_complete = models.BooleanField(
+        default=False, blank=True, null=True)
+    scheduling_quantity = models.PositiveIntegerField(
+        default=0, blank=True, null=True)
 
     def __str__(self):
-        return self.user.username
+        return self.user.username or ''
 
 
 class Portfolio(models.Model):
     description = models.TextField(blank=True, null=True)
     image_portfolio = models.ImageField(
         blank=True, null=True, upload_to='portfolio')
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        if self.image_portfolio:
+            img = Image.open(self.image_portfolio.path)
+
+            new_width = 20 * 20
+            new_heigth = 250
+
+            img = img.resize((new_width, new_heigth), Image.ADAPTIVE)
+            img.save(self.image_portfolio.path)
+
+
+class Finance(models.Model):
+    scheduling = models.ForeignKey(
+        Scheduling, verbose_name='Todos os Agendamentos:', blank=True, null=True, on_delete=models.CASCADE)

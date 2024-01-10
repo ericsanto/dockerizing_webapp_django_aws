@@ -3,6 +3,7 @@ body {
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
+  margin-bottom: 10px;
   box-sizing: border-box;
   padding: 0;
 }
@@ -12,7 +13,11 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
+  margin: 0;
+  padding: 30px;
+  background-color: rgb(132,14,201);
+  border-radius: 10px;
+  margin-bottom: 30px;
 
 }
 
@@ -28,11 +33,13 @@ li {
 a {
   margin: 10px;
   color: white;
+  text-decoration: none;
+  font-size: 20px;
 
 }
 
 a:hover{
-  color: rgb(132,14,201);
+  color: black;
   transition: 0.3s all;
 }
 
@@ -115,7 +122,7 @@ article {
 .img-home {
   border-radius: 30px;
   width: 100%;
-  height: 100%;
+  height: 90%;
 }
 
 .options {
@@ -133,7 +140,7 @@ article {
 
 
 .btn-options:hover {
-  background-color:  rgb(153,50,204);
+  background-color:  black;
   border-radius: 30px;
   color: white;
   transition: 0.3s all;
@@ -143,24 +150,194 @@ article {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: space-around;
   justify-content: center;
-  margin: 30px;
-  padding-top: 50px;
+  margin: 50px;
 
 }
 
 .card {
-  max-width: 1000px;
+  width: 30%;
+  padding-bottom: 80px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   border-radius: 20px;
+  max-width: 50%;
+}
+
+.card-img-top {
+  width: 18rem;
+  height: 70%;
+  border-radius: 20px;
+  padding-top: 20px;
+}
+
+.card-price {
+  font-size: 15px;
+}
+
+.card:hover {
+  background-color: rgb(153,50,204);
+  transition: 0.8s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+p {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.scheduling-title {
+  margin: 30px;
+  font-size: 40px;
+  padding-top: 20px;
+}
+
+#btn {
+  text-decoration: none;
 }
 
 
+.btn-primary:hover {
+  color: white;
+  background-color:black;
+  border-radius: 20px;
+  padding: 10px;
+}
 
 
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+ justify-content: center;
+ padding-top: 30px;
+}
+
+.submit-btn {
+  width: 30%;
+}
+
+.submit-btn:hover {
+  background-color: rgb(153,50,204);
+  color: white;
+  transition: 0.3s;
+}
+
+.confirm-delete {
+  width: 30%;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.confirm-delete:hover {
+  color: white;
+  background-color: rgb(153,50,204);
+  cursor: pointer;
+  transition: 0.3s
+}
+
+.cancel-delete {
+  border-radius: 20px;
+  padding: 10px;
+  width: 30%;
+}
+
+.cancel-delete:hover {
+  color: white;
+  background-color: rgb(153,50,204);
+  cursor: pointer;
+  transition: 0.3s
+}
+
+.container-portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.description {
+  padding-bottom: 30px;
+}
+
+.img-portfolio {
+  border-radius: 10px;
+
+}
+
+#table {
+  padding: 30px;
+  color: white;
+  align-items: center;
+}
+
+.th {
+  padding: 20px;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.container-all-schedulings {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.title-h2 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
 
 
+.container-home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  padding-top: 30px;
+  max-width: 70%;
+}
 
 
+.circle-card {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
 
 
+.circle-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.circle-img img {
+  width: 100%;
+  height: 100%;
+  
+}

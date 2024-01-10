@@ -1,3 +1,4 @@
+from typing import Any
 from django import forms
 from .models import *
 from django.forms import ValidationError
@@ -54,6 +55,16 @@ class SchedulingForm(forms.ModelForm):
             raise forms.ValidationError(
                 f'O horário está indisponível para este dia')
         return time
+
+    def save(self, commit=True):
+        scheduling = super().save(commit=False)
+
+        if commit:
+            scheduling.save()
+            Finance.objects.create(
+                scheduling=scheduling,
+            )
+        return scheduling
 
     '''def clean_phone(self):
         phone = self.cleaned_data.get("phone")

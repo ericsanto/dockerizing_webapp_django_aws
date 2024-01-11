@@ -97,3 +97,25 @@ class Portfolio(models.Model):
 class Finance(models.Model):
     scheduling = models.ForeignKey(
         Scheduling, verbose_name='Todos os Agendamentos:', blank=True, null=True, on_delete=models.CASCADE)
+
+
+class Carrousel(models.Model):
+    image_carrousel = models.ImageField(
+        upload_to='carrousel_images', blank=True, null=True)
+    title_carousel = models.CharField(
+        'Título do Carrousel:', max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return self.title_carousel
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        if self.image_carrousel:
+            image = Image.open(self.image_carrousel.path)
+
+            new_width = 25 * 25
+            new_heigth = 350
+
+            image.resize((new_width, new_heigth), Image.ADAPTIVE)
+            image.save(self.image_carrousel.path)

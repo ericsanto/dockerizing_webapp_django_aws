@@ -1,10 +1,11 @@
+{% extends 'register.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static '/css/style3.css' %}">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
   <title>Agendamento</title>
 </head>
@@ -23,6 +24,7 @@
     </ul>
   </header>
 
+  {% block content %}
   <main>
     <form action="{% url 'scheduling' %}" method="post">
       {% csrf_token %}
@@ -50,6 +52,7 @@
     </form>
 
   </main>
+  {% endblock %}
 </body>
 </html>
 

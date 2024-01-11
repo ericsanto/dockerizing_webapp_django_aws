@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
   <title>Inicio</title>
 </head>
 <body>
@@ -30,6 +31,7 @@
   {% endblock %}
 
   {% block content %}
+  
       <div id="div-services">
         <img src="{% static 'images/barbearia.png' %}" alt="" class="img-home">
       </div>
@@ -69,10 +71,41 @@
       </div>
 
       <div class="container-leisure">
-        <div class="title-h2">
-          <h2>Image</h2>
+        <div class="title-leisure">
+          <h2>GARANTIA DE</h2>
+          <h2 class="satisfaction-title">
+            SATISFAÇÃO
+          </h2>
+        </div>
+        <div class="satisfaction">
+          <div class="guarantee">
+            <h3 class="title-border">CORTE COM GARANTIA</h3>
+            <p class="paragraph">Veio até a barbearia, fez o corte ou a barba e depois decidiu que não está tão feliz assim? Sem problemas, em até 7 dias após o corte ou até 2 dias após a barba, você pode voltar que o ajuste é por nossa conta</p>
+          </div>
+
+          <div class="maintenance">
+            <h3 class="title-border">PEZINHO PARA TODA A VIDA</h3>
+            <p class="paragraph">A manutenção do pezinho do cabelo agora é por nossa conta*! Basta vir até a barbearia, pedir o serviço, sentar e relaxar. *Condições de uso: "O pezinho para vida toda" como cortesia é limitado a até dois usos após o último serviço pago, sem prazo de validade para os dois usos concedidos.</p>
+          </div>
+
+          <div class="pacotes">
+            <h3 class="title-border">PACOTES</h3>
+            <p class="paragraph">Para manter o visual sempre em dia e economizar, você pode comprar um pacote de serviços que a cada 4 serviços iguais comprados, você recebe o quinto grátis.</p>
+          </div>
+
+          <div class="gift">
+            <h3 class="title-border">VALE PRESENTE</h3>
+            <p class="paragraph">certe no presente! O vale-presente da barbearia pode ser trocado em serviços, que vão muito além do corte e da barba, ou na linha premium completa de produtos para estética masculina.</p>
+          </div>
         </div>
       </div>
-  {% endblock %}    
+
+     
+  {% endblock %} 
+
+
+  
+
+  
 </body>
 </html>

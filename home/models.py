@@ -75,6 +75,10 @@ class Scheduling(models.Model):
     def __str__(self):
         return self.user.username or ''
 
+    @staticmethod
+    def show_day():
+        return timezone.now().date()
+
 
 class Portfolio(models.Model):
     description = models.TextField(blank=True, null=True)
@@ -97,6 +101,9 @@ class Portfolio(models.Model):
 class Finance(models.Model):
     scheduling = models.ForeignKey(
         Scheduling, verbose_name='Todos os Agendamentos:', blank=True, null=True, on_delete=models.CASCADE)
+
+    def total_value(self):
+        return sum(self.scheduling.service.price for self.scheduling in Scheduling.objects.all())
 
 
 class Carrousel(models.Model):

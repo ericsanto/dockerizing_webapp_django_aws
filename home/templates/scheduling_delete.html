@@ -4,11 +4,10 @@
 {% block content %}
 
   <div class="container-fluid">
-      <h2> Tem certeza?</h2>
-
-      <p><strong>Você tem certeza que quer cancelar o Agendamento marcado?</strong></p>
-
-      <form action="{% url 'scheduling_delete' scheduling.pk %}" method="post">
+      <h2 class="title-delete-form"> Tem certeza?</h2>
+      
+        <p class="paragraph-delete"><strong>Você tem certeza que quer cancelar o Agendamento marcado?</strong></p>
+      <form action="{% url 'scheduling_delete' scheduling.pk %}" method="post" >
         {% csrf_token %}
 
         <button type="submit" class="confirm-delete">Sim</button>

@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: black;
   color: white;
@@ -11,50 +15,37 @@ body {
 
 }
 
-header { 
+
+
+#title {
+  flex-direction: column;
+}
+
+/* ESTILO DA PÁGINA 'register.html'*/
+
+header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
-  padding: 30px;
-  background-color:rgb(63, 3, 93);
-  border-radius: 10px;
-  margin-bottom: 30px;
-
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #222222;
 }
 
-#title {
-  flex-direction: column;
-  line-height: 10px;
+.container-logo {
+  width: 60%;
 }
 
-li {
-  display: inline-block;
+#first-title {
+  color: rgb(153,50,204);
 }
 
-a {
-  margin: 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
 
-}
+article {
+  margin-top: 10px;
+  max-width: 50%;
 
-a:hover{
-  color: black;
-  transition: 0.3s all;
-}
-
-#inscreva-se-btn {
-  border: 2px solid  rgb(153,50,204);
-  padding: 10px;
-  border-radius: 20px;
-  color: white;
-}
-
-#inscreva-se-btn:hover{
-  background-color:  rgb(153,50,204);
 }
 
 main {
@@ -62,6 +53,46 @@ main {
   flex-direction: row;
   margin: 20px;
   align-items: center;
+}
+
+#inscreva-se-btn {
+  border: 2px solid  rgb(153,50,204);
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  margin: 0 auto;
+}
+
+#inscreva-se-btn:hover{
+  background-color:  rgb(153,50,204);
+}
+
+
+.logo-header {
+  width: 30%;
+}
+
+li {
+  display: inline-block;
+}
+
+.home {
+  margin: 0;
+  padding-left: 0;
+  padding: 10px;
+  width: 50%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+a:hover{
+  color: black;
+  transition: 0.3s all;
 }
 
 
@@ -88,10 +119,6 @@ h2 {
   line-height: 10px;
 }
 
-#first-title {
-  color: rgb(153,50,204);
-}
-
 .btn-submit{
   background-color: rgb(132,14,201);
   color: white;
@@ -104,19 +131,93 @@ h2 {
   transition: 0.3s all;
 }
 
-article {
-  margin-top: 10px;
-  max-width: 50%;
-
+ul.ul-2 {
+  padding: 0px;
 }
 
-#service-card {
-  margin-top: 100px;
+.ul{
+  display: flex;
+}
+
+.footer {
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #222222;
+}
+
+.main-options {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.link-btn-footer {
+  line-height: 0;
+  cursor: pointer;
+}
+
+.btn-option-footer {
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  justify-content: center;
+  cursor: pointer;
+  
+}
+
+.contact-options {
+  text-align: center;
+  line-height: 10px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.btn-social-media {
+  color: white;
+  display: inline-block;
+  padding: 10px;
+}
+
+
+.text-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-contact-footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+}
+
+
+
+.social-media-footer {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.btn-option-footer:hover {
+  color: black;
+  transition: 0.3s all;
+}
+
+
+.btn-social-media:hover{
+  color: black;
 
 }
 
+/* FIM DA PÁGINA 'register' */
+
+
+
+/* ESTILO DA PÁGINA 'home.html' */
 #div-services {
   display: flex;
   justify-content: center;
@@ -138,9 +239,123 @@ article {
 }
 
 .btn-options{
-    padding: 20px;
+  padding: 20px;
 }
 
+.title-h2 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.container-home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  padding-top: 30px;
+  max-width: 70%;
+}
+
+
+.circle-card {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 100px;
+  
+}
+
+.circle-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.container-leisure {
+  background-image: url("https://i.pinimg.com/originals/f3/e2/4d/f3e24d37faf7feb883850faf90deec09.jpg");
+  background-size: contain;
+  background-position: center;
+  max-height: 500px;
+  padding: 10px;
+  padding-bottom: 15%;
+ 
+}
+
+.title-h2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h2.h2-1 {
+  padding-right: 20px;
+}
+
+.title-leisure {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.satisfaction-title {
+  color:  rgb(153,50,204);
+  padding-left: 10px;
+}
+
+.guarantee, .maintenance, .pacotes, .gift  {
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title-border {
+  border: 2px solid ;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.paragraph {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.circle-img img {
+  width: 100%;
+  height: 100%;
+  
+}
+
+
+.satisfaction {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+
+#service-card {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+
+}
 
 .btn-options:hover {
   background-color:  black;
@@ -148,7 +363,32 @@ article {
   color: white;
   transition: 0.3s all;
 }
+/* FIM DA PÁGINA 'home.html' */
 
+
+
+/* ESTILO DA PÁGINA 'scheduling.html' */
+.form-scheduling {
+  display: flex;
+  justify-content: center;
+}
+
+.form-scheduling-form {
+  width: 30%;
+  padding-top: 50px;
+}
+
+.scheduling-title {
+  margin: 30px;
+  font-size: 40px;
+  padding-top: 20px;
+}
+
+/* FIM DA PÁGINA 'scheduling.html' */
+
+
+
+/* ESTILO DA PÁGINA 'scheduling_detail.html' */
 .container {
   display: flex;
   flex-direction: row;
@@ -192,16 +432,9 @@ p {
   padding: 10px;
 }
 
-.scheduling-title {
-  margin: 30px;
-  font-size: 40px;
-  padding-top: 20px;
-}
-
 #btn {
   text-decoration: none;
 }
-
 
 .btn-primary:hover {
   color: white;
@@ -209,16 +442,26 @@ p {
   border-radius: 20px;
   padding: 10px;
 }
+/* FIM DA PÁGINA 'scheduling_detail.html' */
 
 
+
+/* ESTILO DA PÁGINA 'scheduling_delete.html' */
 .container-fluid {
   display: flex;
   flex-direction: column;
   width: 60%;
   margin: 0 auto;
- justify-content: center;
- padding-top: 30px;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
+
+
+.paragraph-delete {
+  margin: 0;
+}
+
 
 .submit-btn {
   width: 30%;
@@ -274,7 +517,11 @@ p {
   border-radius: 10px;
 
 }
+/* FIM DA PÁGINA 'scheduling_delete.html' */
 
+
+
+/* ESTILO DA PÁGINA 'finances.html' */
 #table {
   padding: 30px;
   color: white;
@@ -296,153 +543,216 @@ p {
   justify-content: center;
 
 }
-
-.title-h2 {
-  text-align: center;
-  padding-top: 30px;
-}
-
-.circle {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  position: relative;
-}
+/* FIM DA PÁGINA 'finances.html' */
 
 
-.container-home {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+
+/* ESTILO DA PÁGINA 'scheduling_update.html' */
+.form-update {
+  width: 50%;
   margin: 0 auto;
-  align-items: center;
-  padding-top: 30px;
-  max-width: 70%;
 }
 
+.submit-btn {
+  padding: 20px;
+  width: 50%;
+  margin-top: 50px;
+}
 
-.circle-card {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 100px;
+/* FIM DA PÁGINA 'scheduling_update.html' */
+
+
+/* RESPONSIVIDADE DA PÁGINA HOME*/
+
+@media screen and (max-width:865px){
+
+  header {
+    flex-direction: column;
+  }
+
+
+  li {
+    display: block;
+
+  }
+
+  .options{
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+
+  .ul {
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  ul.ul {
+    padding: 0px;
+  }
+
+  ul.home {
+    text-align: center;
+  }
+
+  .logo-header {
+    width: 100%;
+  }
+
+  img.img-home {
+    padding-bottom: 20px;
+  }
+
+  #div-services {
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title-h2 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+
+  }
+
+  .h2 {
+    margin: 0;
+    padding: 50px;
+    gap: 50px;
+  }
+
+  .container-leisure {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 1280px;
+  }
+
+  .title-leisure {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .satisfaction-title {
+    margin-top: 0;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0%;
+  }
+
   
+  footer {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+  }
+
+  ul.ul-2 {
+    padding: 0px;
+  }
 }
 
 
-.circle-image {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 50%;
-  margin: 0 auto;
-}
+/* RESPONSIVIDADE DA PÁGINA user_scheduling*/
 
-.circle-img img {
-  width: 100%;
-  height: 100%;
+@media screen and (max-width:865px){
   
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  h5.card-title {
+    font-size: 20px;
+  }
+
+  p.card-text {
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+
+  a.btn.btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .scheduling-title-2 {
+    margin: 30px;
+    font-size: 40px;
+  }
+
+  div.form-scheduling {
+    width: 100%;
+  }
+
+  form.form-scheduling-form {
+    width: 100%;
+    padding: 30px;
+  }
+
+  div.container-fluid {
+    width: 100%;
+  }
+
+  form.form-update {
+    width: 100%;
+  }
+
+  .submit-btn {
+    width: 55%;
+  }
+
+  .title-delete-form {
+    text-align: center;
+  }
+  
+
+  p.paragraph-delete {
+    text-align: center;
+  }
 }
 
-.container-leisure {
-  background-image: url("https://i.pinimg.com/originals/f3/e2/4d/f3e24d37faf7feb883850faf90deec09.jpg");
-  background-size: contain;
-  background-position: center;
-  max-height: 500px;
-  padding: 10px;
-  padding-bottom: 15%;
- 
-}
+@media screen and (max-width:1024px){
+  
+  div.title-leisure {
+    padding-top: 50px;
+  }
+  
+  div.container-leisure {
+   width: 100%;
+   max-height: 900px;
+  }
 
-
-.satisfaction {
-  display: flex;
-  flex-direction: row;
-  justify-content:space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding-top: 30px;
-}
-
-
-.guarantee, .maintenance, .pacotes, .gift  {
-  max-width: 400px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.title-border {
-  border: 2px solid ;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-.paragraph {
-  font-size: 20px;
-}
-
-.title-leisure {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.satisfaction-title {
-  color:  rgb(153,50,204);
-}
-
-
-.footer-barber {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-  margin: 0 auto;
-  padding-top: 30px;
-
-}
-
-.main-options {
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-
-}
-
-.title-footer-main {
-  text-align: center;
-}
-
-
-.btn-option-footer {
-  display: flex;
-  flex-direction: column;
-  line-height: 40px;
-}
-
-.contact-options {
-  text-align: center;
-  line-height: 40px;
-  margin: 0 auto;
-}
-
-
-.btn-contact-footer {
-  display: flex;
-  flex-direction: column;
-}
-
-.btn-social-media {
-  color: white;
-  display: inline-block;
-  padding: 10px;
-}
-
-
-.social-media-footer {
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
+  div.satisfaction {
+    padding: 30px;
+  }
 }

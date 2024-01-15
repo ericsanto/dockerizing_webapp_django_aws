@@ -1,5 +1,6 @@
 {% extends 'register.html' %}
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,21 +11,23 @@
   <title>Inicio</title>
 </head>
 <body>
-
+  
   {% block header %}
       <header>
-        <div id="title">
-          <h1>Barbearia</h1>
-          <h1>Boa Vista</h1>
-        </div>
+        <div class="container-logo">
+            <img src="{% static 'images/logo-barber2-removebg-preview.png' %}" alt="" class="logo-header">
+        </div>  
 
-        <ul>
+        <ul class="home">
           <a href="{% url 'home' %}"><li>Inicio</li></a>
           <a href="#"><li>Serviços</li></a>
           <a href="#"><li>Sobre</li></a>
           <a href="#"><li>Contato</li></a>
           {% if not request.user.is_authenticated %}
-          <a href="#" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+          <a href="{% url 'create_user' %}"><li>Cadastre-se</li></a>
+          {% endif %}
+          {% if not request.user.is_authenticated %}
+          <a href="{% url 'login' %}" id="inscreva-se-btn"><li>Login</li></a>
           {% endif %}
         </ul>
       </header>
@@ -37,7 +40,7 @@
       </div>
 
       <div class="options">
-        <ul>
+        <ul class="ul">
           <a href="" class="btn-options"><li>Serviços</li></a>
           <a href="{% url 'portfolio' %}" class="btn-options"><li>Portifólio</li></a>
           <a href="" class="btn-options"><li>Detalhes</li></a>
@@ -52,7 +55,8 @@
     
 
       <div class="title-h2">
-        <h2>Nossos  Serviços</h2>
+        <h2 class="h2-1">Nossos</h2>
+        <h2 class="h2-2">Serviços</h2>
       </div>
 
       <div class="container-home">
@@ -63,8 +67,8 @@
                 <img src="{{ service.image.url }}" alt="Circular Image">
               </div>
             {% endif %}
-            <div class="card-body">
-              <h5 class="card-title">{{ service.name }}</h5>
+            <div class="card-body-circle">
+              <h5 class="card-title-circle">{{ service.name }}</h5>
             </div>
           </div>
         {% endfor %}
@@ -98,14 +102,7 @@
             <p class="paragraph">certe no presente! O vale-presente da barbearia pode ser trocado em serviços, que vão muito além do corte e da barba, ou na linha premium completa de produtos para estética masculina.</p>
           </div>
         </div>
-      </div>
-
-     
+      </div>     
   {% endblock %} 
-
-
-  
-
-  
 </body>
 </html>

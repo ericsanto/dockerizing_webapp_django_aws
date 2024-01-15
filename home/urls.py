@@ -13,7 +13,10 @@ urlpatterns = [
          UserSchedulingDetailView.as_view(), name='scheduling_detail'),
     path('scheduling_delete/<int:pk>/',
          UserSchedulingDeleteView.as_view(), name='scheduling_delete'),
-    path('portfolio_create/', PortfolioCreateView.as_view(), name='portfolio_create'),
+    path('portfolio_create/', PortfolioCreateView.as_view(),
+         name='portfolio_create'),
     path('portfolio/', PortfolioListView.as_view(), name='portfolio'),
-    path('finances/', FinanceListView.as_view(), name='finances')
+    path('restrict/finances/', FinanceListView.as_view(), name='finances'),
+    path('scheduling_to_day/', SchedulingToDay.as_view(), name='scheduling_to_day'),
+
 ]

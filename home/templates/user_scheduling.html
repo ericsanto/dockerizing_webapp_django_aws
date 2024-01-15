@@ -12,7 +12,8 @@
 
     {% block content %}
       <div class="title-h2">
-        <h2 class="scheduling-title"> Meus Agendamentos </h2>
+        <h2 class="scheduling-title"> Meus</h2>
+        <h2 class="scheduling-title-2">Agendamentos</h2>
       </div>
       <div class="container">
         {% for scheduling in user_scheduling %}
@@ -24,6 +25,7 @@
           </div>
         </div> 
         {% endfor %}
+      </div>
     {% endblock %}
 
 </body>

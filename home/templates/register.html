@@ -12,18 +12,20 @@
 <body>
   {% block header %}
   <header>
-    <div id="title">
-      <h1>Barbearia</h1>
-      <h1>Boa Vista</h1>
-    </div>
+      <div class="container-logo">
+        <img src="{% static 'images/logo-barber2-removebg-preview.png' %}" alt="" class="logo-header">
+    </div> 
 
-    <ul>
+    <ul class="home">
       <a href="{% url 'home' %}"><li>Inicio</li></a>
       <a href="#"><li>Serviços</li></a>
       <a href="#"><li>Sobre</li></a>
       <a href="#"><li>Contato</li></a>
       {% if not request.user.is_authenticated %}
-      <a href="#" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+      <a href="{% url 'create_user' %}"><li>Cadastre-se</li></a>
+      {% endif %}
+      {% if not request.user.is_authenticated %}
+      <a href="{% url 'login' %}" id="inscreva-se-btn"><li>Login</li></a>
       {% endif %}
     </ul>
   </header>
@@ -77,30 +79,33 @@
   {% endblock %}
 
   {% block footer %}
+
     <footer class="footer-barber">
+      <div class="footer">
         <div class="main-options">
           <div class="title-footer-main">
             <h3>Menu</h3>
           </div>
+
           <hr>
-          <ul>
-            <li class="btn-option-footer">Página Inicial</li>
-            <li class="btn-option-footer">Sobre a Empresa</li>
-            <li class="btn-option-footer">Galeria de Fotos</li>
-            <li class="btn-option-footer">Fale Conosco</li>
+          <ul class="ul-2">
+          <a href="" class="link-btn-footer"></a><li class="btn-option-footer">Página Inicial</li></a> 
+          <a href="" class="link-btn-footer"></a><li class="btn-option-footer">Sobre a Empresa</li></a>
+          <a href="" class="link-btn-footer"></a><li class="btn-option-footer">Galeria de Fotos</li></a>
+          <a href="" class="link-btn-footer"></a><li class="btn-option-footer">Fale Conosco</li></a>
           </ul>
         </div>
 
         <div class="contact-options">
           <div class="title-footer-contact">
-            <h3>Contact</h3>
+            <h3>Contatos</h3>
           </div>
-          <hr>
 
-            <ul>
-             <li class="btn-contact-footer">contato@barbearia.com.br</li>
-              <li class="btn-contact-footer">79 99000-0101</li>
-              <li class="btn-contact-footer">79 99000-0101</li>
+          <hr>
+            <ul class="ul-2">
+              <a href="" class="link-btn-footer"><li class="btn-option-footer">contato@barbearia.com.br</li></a>
+              <a href="" class="link-btn-footer"></a><li class="btn-option-footer">79 99000-0101</li></a>
+              <a href="" class="link-btn-footer"></a><li class="btn-option-footer">79 99000-0101</li></a>
             </ul>
         </div>
 
@@ -109,14 +114,18 @@
             <h3>Redes Sociais</h3>
           </div>
           <hr>
-          <ul>
-           <li class="btn-social-media"><i class="bi bi-instagram"></i></i></li>
+          <ul class="ul-2">
+           <a href=""></a><li class="btn-social-media"><i class="bi bi-instagram"></i></i></li>
            <li class="btn-social-media"><i class="bi bi-facebook"></i></li>
            <li class="btn-social-media"><i class="bi bi-twitter"></i></li>
            <li class="btn-social-media"><i class="bi bi-threads"></i></li>
           </ul>
-
         </div>
+      </div>
+
+      <div class="text-footer">
+        <h4>Barbearia 2024, todos os direitos reservados</h4>
+      </div>
     </footer>
   {% endblock %}
 </body>

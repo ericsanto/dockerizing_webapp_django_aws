@@ -1,10 +1,9 @@
 {% extends 'register.html' %}
 
-
-
 {% block content %}
-  <div class="title-h2">
-  <h2 class="title">Todos os agendamentos</h2>
+
+<div class="title-h2">
+  <h2 class="title">Agendamentos do dia</h2>
   </div>
 
 
@@ -22,22 +21,17 @@
       </tr>
     </thead>
     <tbody>
-      {% for finance in finances_objects %}
+      {% for scheduling in scheduling_to_day %}
       <tr>
-        <th scope="row">{{finance.scheduling.user}}</th>
-        <td class="th"> {{ finance.scheduling.day }}</td>
-        <td class="th">{{ finance.scheduling.get_time_display }}</td>
-        <td class="th">{{ finance.scheduling.service.price }}</td>
+        <th scope="row">{{ scheduling.user}}</th>
+        <th class="th">{{ scheduling.day }}</th>
+        <td class="th">{{ scheduling.get_time_display }}</td>
+        <td class="th">{{ scheduling.service.price }}</td>
       </tr>
       
       {% endfor %}
     </tbody>
     </table>
   </div>
-  <div class="total-value-finance">
-    <h4>Total: {{finances.total_value}}</h4>
-  </div>
-{% endblock %}
 
-{% block footer %}
 {% endblock %}

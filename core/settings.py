@@ -128,11 +128,9 @@ MEDIA_ROOT = Path(BASE_DIR, 'media/')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_URL = 'logout'
+LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'home'
-
 
 TWILIO_ACCOUNT_SID = 'AC233045d1f5ec5ed0a82cedb7e2f281bf'
 TWILIO_AUTH_TOKEN = '40fd3e810cd740f81a2ca3ba7417c914'

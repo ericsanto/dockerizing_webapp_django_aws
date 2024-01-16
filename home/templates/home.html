@@ -34,7 +34,6 @@
   {% endblock %}
 
   {% block content %}
-  
       <div id="div-services">
         <img src="{% static 'images/barbearia.png' %}" alt="" class="img-home">
       </div>
@@ -51,8 +50,7 @@
           <a href="{% url 'scheduling_user' %}" class="btn-options"><li>Meus Agendamentos</li></a>
           {% endif %}
         </ul>
-      </div>
-    
+      </div> 
 
       <div class="title-h2">
         <h2 class="h2-1">Nossos</h2>
@@ -73,6 +71,7 @@
           </div>
         {% endfor %}
       </div>
+  
 
       <div class="container-leisure">
         <div class="title-leisure">
@@ -102,7 +101,7 @@
             <p class="paragraph">certe no presente! O vale-presente da barbearia pode ser trocado em serviços, que vão muito além do corte e da barba, ou na linha premium completa de produtos para estética masculina.</p>
           </div>
         </div>
-      </div>     
+      </div>  
   {% endblock %} 
 </body>
 </html>

@@ -126,3 +126,12 @@ class Carrousel(models.Model):
 
             image.resize((new_width, new_heigth), Image.ADAPTIVE)
             image.save(self.image_carrousel.path)
+
+
+class Pix(models.Model):
+    value = models.FloatField(blank=True, null=True)
+    scheduling = models.OneToOneField(Scheduling,
+                                      blank=True, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.value

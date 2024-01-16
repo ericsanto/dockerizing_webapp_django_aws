@@ -3,7 +3,12 @@
 
 {% block content %}
 
-  <form action="{% url 'login' %}" method="post">
+<div class="form-login">
+
+  <div class="title-login">
+    <h2>Login</h2>
+  </div>
+  <form action="{% url 'login' %}" method="post" class="form-form-login">
     {% csrf_token %}
 
     <label for="{{ form.username.id_for_label}}">Username</label>
@@ -14,6 +19,7 @@
     {{ form.password }}
     {{ form.errors }}
 
-    <input type="submit" value="Entrar" name="submit">
+    <input type="submit" value="Entrar" name="submit" class="input-form-login">
   </form>
+</div>
 {% endblock %}

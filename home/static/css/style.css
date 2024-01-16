@@ -213,6 +213,27 @@ ul.ul-2 {
 
 }
 
+.form-form-login {
+  width: 50%;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 30px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.input-form-login {
+  width: 20%;
+}
+
+.title-login {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+
 /* FIM DA PÁGINA 'register' */
 
 
@@ -631,11 +652,10 @@ p {
     gap: 50px;
   }
 
-  .container-leisure {
+  div.container-leisure {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-height: 1280px;
+    max-height: 1400px;
   }
 
   .title-leisure {
@@ -660,7 +680,7 @@ p {
     padding: 0%;
   }
 
-  
+
   footer {
     display: flex;
     flex-direction: column;
@@ -734,25 +754,45 @@ p {
   .title-delete-form {
     text-align: center;
   }
-  
+
 
   p.paragraph-delete {
     text-align: center;
   }
+
+  h2.title-1, .title-2 {
+    font-size: 40px;
+  }
+
+
+  table#table {
+    margin: 10px;
+  }
+
+  .form-form-login {
+    margin: 0 auto;
+    justify-content: center;
+    padding: 30px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+
+  .input-form-login {
+    width: 50%;
+  }
+
+  .title-login {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
 }
 
-@media screen and (max-width:1024px){
-  
-  div.title-leisure {
-    padding-top: 50px;
-  }
-  
-  div.container-leisure {
-   width: 100%;
-   max-height: 900px;
+
+@media screen and (max-width:1030px){
+  .container-leisure {
+    max-height: 1600px;
   }
 
-  div.satisfaction {
-    padding: 30px;
-  }
 }

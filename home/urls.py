@@ -18,5 +18,6 @@ urlpatterns = [
     path('portfolio/', PortfolioListView.as_view(), name='portfolio'),
     path('restrict/finances/', FinanceListView.as_view(), name='finances'),
     path('scheduling_to_day/', SchedulingToDay.as_view(), name='scheduling_to_day'),
+    path('pat_to_pix/<int:pk>/', PayToPixListView.as_view(), name='pay_to_pix')
 
 ]

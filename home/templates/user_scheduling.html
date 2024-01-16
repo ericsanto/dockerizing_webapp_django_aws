@@ -22,6 +22,7 @@
             <h5 class="card-title">{{scheduling.day}}</h5>
             <p class="card-text">{{ scheduling.service }}.</p>
             <a href="{% url 'scheduling_detail' scheduling.pk %}" class="btn btn-primary">Detalhes do Agendamento</a>
+            
           </div>
         </div> 
         {% endfor %}

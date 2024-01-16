@@ -120,3 +120,9 @@ class SchedulingToDay(UserPassesTestMixin, ListView):
 
     def test_func(self):
         return self.request.user.is_superuser
+
+
+class PayToPixListView(ListView):
+    model = Pix
+    template_name = 'pay_to_pix.html'
+    context_object_name = 'pix'

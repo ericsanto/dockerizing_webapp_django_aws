@@ -131,6 +131,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'home'
+AUTH_USER_MODEL = 'users.UserCustom'
+
 
 TWILIO_ACCOUNT_SID = 'AC233045d1f5ec5ed0a82cedb7e2f281bf'
 TWILIO_AUTH_TOKEN = '40fd3e810cd740f81a2ca3ba7417c914'

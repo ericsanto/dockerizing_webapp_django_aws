@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.utils import timezone
 from PIL import Image
 from django.contrib import messages
@@ -58,7 +58,7 @@ class BarbersTeam(models.Model):
 
 class Scheduling(models.Model):
     user = models.ForeignKey(
-        User, verbose_name='Cliente', on_delete=models.CASCADE)
+        settings.AUTH_USER_MODEL, verbose_name='Cliente', on_delete=models.CASCADE)
     day = models.DateField(verbose_name='Dia')
     service = models.ForeignKey(
         Services, verbose_name='Serviço', on_delete=models.CASCADE)
@@ -103,7 +103,11 @@ class Finance(models.Model):
         Scheduling, verbose_name='Todos os Agendamentos:', blank=True, null=True, on_delete=models.CASCADE)
 
     def total_value(self):
-        return sum(self.scheduling.service.price for self.scheduling in Scheduling.objects.all())
+        total = 0
+
+        for self.scheduling in Scheduling.objects.all():
+            total += self.scheduling.service.price
+        return total
 
 
 class Carrousel(models.Model):

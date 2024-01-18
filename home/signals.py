@@ -1,4 +1,4 @@
-from django.db.models.signals import post_save, post_delete
+'''from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 
 from twilio.rest import Client
@@ -24,4 +24,4 @@ def send_sms_notification(sender, instance, created, **kwargs):
         )
 
     except Exception as e:
-        print(f'Erro ao enviar mensagem{str(e)}')
+        print(f'Erro ao enviar mensagem{str(e)}')'''

@@ -11,7 +11,7 @@
   <form action="{% url 'login' %}" method="post" class="form-form-login">
     {% csrf_token %}
 
-    <label for="{{ form.username.id_for_label}}">Username</label>
+    <label for="{{ form.username.id_for_label}}">Email</label>
     {{ form.username }}
     {{ form.errors }}
 
@@ -20,6 +20,8 @@
     {{ form.errors }}
 
     <input type="submit" value="Entrar" name="submit" class="input-form-login">
+    
   </form>
+  <a href="{% url 'password_reset' %}">Esqueci Senha</a>
 </div>
 {% endblock %}

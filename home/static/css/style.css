@@ -384,6 +384,26 @@ h2.h2-1 {
   color: white;
   transition: 0.3s all;
 }
+
+a.custom-button {
+  padding: 0px;
+  width: 40px;
+}
+
+.custom-button {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 0;
+  width: 10px;
+  
+}
+
+form.logout {
+  width: 10%;
+}
 /* FIM DA PÁGINA 'home.html' */
 
 
@@ -794,5 +814,87 @@ p {
   .container-leisure {
     max-height: 1600px;
   }
+
+}
+
+
+div.form-reset {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+form.form-password-reset {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+
+}
+
+input.reset {
+  max-width: 40%;
+
+}
+
+input.reset:hover {
+  background-color: rgb(153,50,204);
+  color: white;
+  transition: 0.3s;
+}
+
+label.label-reset {
+  text-align: left;
+}
+
+input#id_email.form-control {
+  width: 100%;
+  max-width: 100%;
+}
+
+.container-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 100px;
+
+}
+
+p.reset-p {
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 50px;
+}
+
+div.container-fluid-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding: 50px;
+  margin: 0 auto;
+  max-width: 60%;
+}
+
+div.btn-submit-reset-password {
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+  margin-left: 60px;
+
+}
+
+div.container-success {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 100px;
 
 }

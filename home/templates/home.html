@@ -29,6 +29,13 @@
           {% if not request.user.is_authenticated %}
           <a href="{% url 'login' %}" id="inscreva-se-btn"><li>Login</li></a>
           {% endif %}
+          {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post" class="">
+
+              {% csrf_token %}
+              <a href="" ><button type="submit" class="custom-button">Sair</button></a>
+            </form>
+          {% endif %}
         </ul>
       </header>
   {% endblock %}
@@ -49,6 +56,7 @@
           {% if request.user.is_authenticated %}
           <a href="{% url 'scheduling_user' %}" class="btn-options"><li>Meus Agendamentos</li></a>
           {% endif %}
+          
         </ul>
       </div> 
 

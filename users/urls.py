@@ -8,4 +8,12 @@ urlpatterns = [
     path('login_user/', as_view.LoginView.as_view(
         template_name='login.html'), name='login'),
     path('logout/', as_view.LogoutView.as_view(), name='logout'),
+    path('password_reset/', CustomPasswordResetView.as_view(),
+         name='password_reset'),
+    path('password_reset_done/', CustomPasswordResetDoneView.as_view(),
+         name='password_reset_done'),
+    path('password_reset_confirm/<slug:uidb64>/<slug:token>/', CustomPasswordResetConfirmView.as_view(),
+         name='password_reset_confirm'),
+    path('password_reset_complete/', as_view.PasswordResetCompleteView.as_view(),
+         name='password_reset_complete')
 ]

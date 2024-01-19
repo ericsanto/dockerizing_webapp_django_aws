@@ -818,6 +818,7 @@ p {
 }
 
 
+/* ESTILIZAÇÃO DAS PÁGINAS DE REDEFINIÇÃO DE SENHA*/
 div.form-reset {
   display: flex;
   flex-direction: column;
@@ -897,4 +898,14 @@ div.container-success {
   flex-direction: column;
   padding: 100px;
 
+}
+
+input.input-form-login:hover {
+  background-color: rgb(153,50,204);
+  transition: 0.3s;
+  color: white;
+}
+
+a.a-password-reset:hover {
+  color: #222222;
 }

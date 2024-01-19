@@ -19,6 +19,7 @@
         <th scope="col" class="th">Data do Serviço</th>
         <th scope="col" class="th">Horário</th>
         <th scope="col" class="th">Preço</th>
+        <th scope="col" class="th">Pago</th>
       </tr>
     </thead>
     <tbody>
@@ -28,6 +29,11 @@
         <td class="th"> {{ finance.scheduling.day }}</td>
         <td class="th">{{ finance.scheduling.get_time_display }}</td>
         <td class="th">{{ finance.scheduling.service.price }}</td>
+        {% if finance.scheduling.paid %}
+        <td class="th">Sim</td>
+        {% else %}
+        <td class="th">Não</td>
+        {% endif %}
       </tr>
       
       {% endfor %}
@@ -35,7 +41,10 @@
     </table>
   </div>
   <div class="total-value-finance">
-    <h4>Total: {{finances.total_value}}</h4>
+    
+    <h4>Total: R$ {{finance.total_value}}</h4>
+    <h4>Maior valor de Serviço: R$ {{finance.max_price}}</h4>
+    
   </div>
 {% endblock %}
 

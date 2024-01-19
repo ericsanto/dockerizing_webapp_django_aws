@@ -3,6 +3,7 @@ from django.conf import settings
 from django.utils import timezone
 from PIL import Image
 from django.contrib import messages
+from django.db.models import Sum, Max, Count
 
 
 class Services(models.Model):
@@ -71,6 +72,7 @@ class Scheduling(models.Model):
         default=False, blank=True, null=True)
     scheduling_quantity = models.PositiveIntegerField(
         default=0, blank=True, null=True)
+    paid = models.BooleanField(verbose_name='Pago', default=False)
 
     def __str__(self):
         return self.user.username or ''
@@ -103,11 +105,16 @@ class Finance(models.Model):
         Scheduling, verbose_name='Todos os Agendamentos:', blank=True, null=True, on_delete=models.CASCADE)
 
     def total_value(self):
-        total = 0
+        total = Scheduling.objects.filter(paid=True).aggregate(
+            Sum('service__price'))['service__price__sum']
 
-        for self.scheduling in Scheduling.objects.all():
-            total += self.scheduling.service.price
         return total
+
+    def max_price(self):
+        max = Scheduling.objects.filter(paid=True).aggregate(
+            Max('service__price'))['service__price__max']
+
+        return max
 
 
 class Carrousel(models.Model):

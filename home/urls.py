@@ -18,6 +18,9 @@ urlpatterns = [
     path('portfolio/', PortfolioListView.as_view(), name='portfolio'),
     path('restrict/finances/', FinanceListView.as_view(), name='finances'),
     path('scheduling_to_day/', SchedulingToDay.as_view(), name='scheduling_to_day'),
-    path('scheduling_to_month/', SchedulingToMonth.as_view(), name='scheduling_to_month'),
+    path('scheduling_to_month/', SchedulingToMonth.as_view(),
+         name='scheduling_to_month'),
+    path('iniciar_pagamento/<int:scheduling_id>',
+         iniciar_pagamento, name='iniciar_pagamento'),
 
 ]

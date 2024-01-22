@@ -939,3 +939,56 @@ select#selct-form {
   cursor: pointer;
   transition: 0.3s all;
 }
+
+/* ESTILIZAÇÃO DA PÁGINA DE 'CHECKOUT.HTML'*/
+
+div.title {
+  text-align: center;
+  width: 80%;
+}
+
+p.payment {
+  padding-top: 100px;
+  font-size: 30px;
+  width: 100%;
+  padding: 20px;
+  line-height: 50px;
+}
+
+p.paragraph-title {
+  font-size: 20px;
+  color:  #74FF73;
+  padding-bottom: 50px;
+}
+
+div.checkout-mp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button.button-payment {
+  background-color: rgb(153,50,204);
+  color: white;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+button.button-payment:hover{
+  background-color: #800080;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.img-mp {
+    width: 70%;
+}
+
+div.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*FIM DA ESTILIZAÇÃO DA PÁGINA 'CHECKOUT.HTML'*/

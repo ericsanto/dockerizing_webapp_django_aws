@@ -11,7 +11,11 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 import datetime
 from datetime import datetime
-from django.db.models import Sum
+import mercadopago
+from core.settings import MERCADO_PAGO_ACCESS_TOKEN
+from django.shortcuts import get_object_or_404
+import json
+from django.core.serializers.json import DjangoJSONEncoder
 
 
 class HomeView(ListView):
@@ -148,4 +152,31 @@ class SchedulingToMonth(ListView):
         context['finance'] = Finance()
         return context
 
-    
+
+def iniciar_pagamento(request, scheduling_id):
+
+    scheduling = get_object_or_404(Scheduling, pk=scheduling_id)
+    sdk = mercadopago.SDK(MERCADO_PAGO_ACCESS_TOKEN)
+
+    price = float(scheduling.service.price)
+
+    preference_data = {
+        "items": [
+            {
+                "title": scheduling.service.name,
+                "quantity": 1,
+                "currency_id": "BRL",
+                "unit_price": price,
+            }
+        ]
+    }
+
+    # Cria a preferência de pagamento
+    preference_response = sdk.preference().create(preference_data)
+    if 'response' in preference_response:
+        preference = preference_response['response']
+
+    else:
+        preference = None
+        
+    return render(request, 'iniciar_pagamento.html', {'preference':  preference})

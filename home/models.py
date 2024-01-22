@@ -3,7 +3,8 @@ from django.conf import settings
 from django.utils import timezone
 from PIL import Image
 from django.contrib import messages
-from django.db.models import Sum, Max, Count
+from django.db.models import Sum, Max, Count, Min
+from datetime import datetime
 
 
 class Services(models.Model):
@@ -30,6 +31,8 @@ class Services(models.Model):
 
             img = img.resize((new_width, new_heigth), Image.ADAPTIVE)
             img.save(self.image.path)
+
+        return min
 
 
 TIMES = (
@@ -81,6 +84,16 @@ class Scheduling(models.Model):
     def show_day():
         return timezone.now().date()
 
+    def count_scheduling(self):
+        date = datetime.now()
+        month = date.month
+
+        mont_scheduling = Scheduling.objects.filter(
+            day__month=month).aggregate(Count('service'))['service__count']
+        return mont_scheduling
+
+  
+
 
 class Portfolio(models.Model):
     description = models.TextField(blank=True, null=True)
@@ -107,42 +120,4 @@ class Finance(models.Model):
     def total_value(self):
         total = Scheduling.objects.filter(paid=True).aggregate(
             Sum('service__price'))['service__price__sum']
-
         return total
-
-    def max_price(self):
-        max = Scheduling.objects.filter(paid=True).aggregate(
-            Max('service__price'))['service__price__max']
-
-        return max
-
-
-class Carrousel(models.Model):
-    image_carrousel = models.ImageField(
-        upload_to='carrousel_images', blank=True, null=True)
-    title_carousel = models.CharField(
-        'Título do Carrousel:', max_length=255, blank=True, null=True)
-
-    def __str__(self):
-        return self.title_carousel
-
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-
-        if self.image_carrousel:
-            image = Image.open(self.image_carrousel.path)
-
-            new_width = 25 * 25
-            new_heigth = 350
-
-            image.resize((new_width, new_heigth), Image.ADAPTIVE)
-            image.save(self.image_carrousel.path)
-
-
-class Pix(models.Model):
-    value = models.FloatField(blank=True, null=True)
-    scheduling = models.OneToOneField(Scheduling,
-                                      blank=True, null=True, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.value

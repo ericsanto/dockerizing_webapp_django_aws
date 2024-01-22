@@ -1,0 +1,68 @@
+{% extends "finances.html" %}
+
+
+{% block content %}
+
+  <div class="title-h2">
+    <h2 class="title">Agendamentos do Mês</h2>
+  </div>
+
+  <div class="form-month">
+    <form action="." method="GET" class="form-month-form">
+      <label for="selct-form">Selecione o mês</label>
+      <select name="month" id="selct-form">
+        <option value="1">Janeiro</option>
+        <option value="2">Fevereiro</option>
+        <option value="3">Março</option>
+        <option value="4">Abril</option>
+        <option value="5">Março</option>
+        <option value="6">Junho</option>
+        <option value="7">Julho</option>
+        <option value="8">Agosto</option>
+        <option value="9">Setembro</option>
+        <option value="10">Outubro</option>
+        <option value="11">Novembro</option>
+        <option value="12">Dezembro</option>
+
+      </select>
+      <input type="submit" class="btn-form-month">
+    </form>
+  </div>
+
+
+
+  <div class="container-all-schedulings ">
+    
+    <table id="table">
+      
+    <thead class="thead">
+      <tr>
+        <th scope="col" class="th">Cliente</th>
+        <th scope="col" class="th">Data do Serviço</th>
+        <th scope="col" class="th">Horário</th>
+        <th scope="col" class="th">Preço</th>
+        <th scope="col" class="th">Pago</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      
+      {% for scheduling in scheduling_to_month %}
+      <tr>
+        <th scope="row">{{scheduling.user}}</th>
+        <td class="th"> {{ scheduling.day }}</td>
+        <td class="th">{{ scheduling.get_time_display }}</td>
+        <td class="th">{{ scheduling.service.price }}</td>
+        {% if scheduling.paid %}
+        <td class="th">Sim</td>
+        {% else %}
+        <td class="th">Não</td>
+        {% endif %}
+      </tr>
+      
+      {% endfor %}
+    </tbody>
+    </table>
+  </div>
+
+{% endblock %}

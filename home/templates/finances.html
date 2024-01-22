@@ -25,7 +25,7 @@
     <tbody>
       {% for finance in finances_objects %}
       <tr>
-        <th scope="row">{{finance.scheduling.user}}</th>
+        <th scope="row">{{ finance.scheduling.user}}</th>
         <td class="th"> {{ finance.scheduling.day }}</td>
         <td class="th">{{ finance.scheduling.get_time_display }}</td>
         <td class="th">{{ finance.scheduling.service.price }}</td>
@@ -44,7 +44,8 @@
     
     <h4>Total: R$ {{finance.total_value}}</h4>
     <h4>Maior valor de Serviço: R$ {{finance.max_price}}</h4>
-    
+    <h4>Total de agendamentos do atual: {{scheduling.count_scheduling}}</h4>
+    <h4>Total de agendamentos do atual: {{scheduling.count_scheduling_for_users}}</h4>
   </div>
 {% endblock %}
 

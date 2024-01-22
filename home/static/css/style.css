@@ -584,6 +584,10 @@ p {
   justify-content: center;
 
 }
+
+.total-value-finance {
+  text-align: center;
+}
 /* FIM DA PÁGINA 'finances.html' */
 
 
@@ -908,4 +912,30 @@ input.input-form-login:hover {
 
 a.a-password-reset:hover {
   color: #222222;
+}
+
+div.form-month {
+  display: flex;
+  max-width: 60%;
+}
+
+.form-month-form {
+  width: 40%;
+  margin: 40px;
+}
+
+select#selct-form {
+  margin-bottom: 20px;
+}
+
+.btn-form-month {
+  width: 40%;
+  padding: 10px;
+}
+
+.btn-form-month:hover {
+  background-color: rgb(153,50,204);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s all;
 }

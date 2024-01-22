@@ -10,6 +10,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 import datetime
+from datetime import datetime
 from django.db.models import Sum
 
 
@@ -21,7 +22,6 @@ class HomeView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
         context['barbers'] = BarbersTeam.objects.all()
-        context['carousel'] = Carrousel.objects.all()
         return context
 
 
@@ -52,8 +52,7 @@ class SchedulingUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'scheduling_update.html'
     success_url = reverse_lazy('scheduling_detail')
 
-    def get_success_url(self) -> str:
-
+    def get_success_url(self):
         return reverse_lazy('scheduling_detail', kwargs={'pk': self.object.pk})
 
 
@@ -106,7 +105,10 @@ class FinanceListView(UserPassesTestMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['finance'] = Finance()
+        context['scheduling'] = Scheduling()
+
         return context
+
 
 class SchedulingToDay(UserPassesTestMixin, ListView):
     model = Scheduling
@@ -122,7 +124,28 @@ class SchedulingToDay(UserPassesTestMixin, ListView):
         return self.request.user.is_superuser
 
 
-class PayToPixListView(ListView):
-    model = Pix
-    template_name = 'pay_to_pix.html'
-    context_object_name = 'pix'
+class SchedulingToMonth(ListView):
+    model = Scheduling
+    template_name = 'scheduling_to_month.html'
+    context_object_name = 'scheduling_to_month'
+
+    def get_queryset(self):
+        day = datetime.now()
+        month = day.month
+        month_filter = self.request.GET.get('month')
+
+        if month_filter:
+            month_resp = Scheduling.objects.filter(
+                day__month=int(month_filter))
+            return month_resp
+        else:
+            month_all = Scheduling.objects.filter(day__month=month)
+            return month_all
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['finance'] = Finance()
+        return context
+
+    

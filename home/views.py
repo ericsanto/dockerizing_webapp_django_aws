@@ -1,21 +1,23 @@
 from typing import Any
-from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import *
 from .models import *
 from .forms import *
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-from django.utils.decorators import method_decorator
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
 import datetime
 from datetime import datetime
 import mercadopago
-from core.settings import MERCADO_PAGO_ACCESS_TOKEN
+from core.settings import MERCADO_PAGO_ACCESS_TOKEN, PAYPAL_SECRET_KEY, PAYPAL_CLIENT_ID, EMAIL_HOST_USER
 from django.shortcuts import get_object_or_404
 import json
 from django.core.serializers.json import DjangoJSONEncoder
+import hmac
+import hashlib
+from paypalrestsdk import Payment
+import paypalrestsdk
+from django.core.mail import send_mail
+from django.http import HttpResponse
 
 
 class HomeView(ListView):
@@ -178,5 +180,72 @@ def iniciar_pagamento(request, scheduling_id):
 
     else:
         preference = None
-        
+
     return render(request, 'iniciar_pagamento.html', {'preference':  preference})
+
+
+"""def payment(request, scheduling_id):
+
+    paypal_client_id = PAYPAL_CLIENT_ID
+    paypal_secret_key = PAYPAL_SECRET_KEY
+
+    scheduling = get_object_or_404(Scheduling, pk=scheduling_id)
+    price = float(scheduling.service.price)
+
+    payment = Payment({
+        "intent": "sale",
+        "payer": {
+            "payment_method": "paypal"
+        },
+        "redirect_urls": {
+            "return_url": "http://localhost:8000/success/",
+            "cancel_url": "http://localhost:8000/cancel/"
+        },
+        "transactions": [{
+            "item_list": {
+                "items": [{
+                    "name": scheduling.service.name,
+                    "sku": "item123",
+                    "price": price,
+                    "currency": "BRL",
+                    "quantity": 1
+                }]
+            },
+            "amount": {
+                "total": "5.00",
+                "currency": "BRL"
+            },
+            "description": "Compra de teste"
+        }]
+    }, api=paypalrestsdk.set_config({
+        'mode': 'sandbox',  # ou 'live' para ambiente de produção
+        'client_id': paypal_client_id,
+        'client_secret': paypal_secret_key
+    }))
+
+    if payment.create():
+        # Redirecione para a URL de aprovação do PayPal
+        for link in payment.links:
+            if link.method == "REDIRECT":
+                return redirect(link.href)
+    return render(request, 'payment.html', {'payment': payment})"""
+
+
+def CheckOut(request, scheduling_id):
+    scheduling = get_object_or_404(Scheduling, pk=scheduling_id)
+
+    context = {
+        'scheduling': scheduling
+    }
+
+    return render(request, 'checkout.html', context)
+
+
+def PaymentSuccessfull(request, scheduling_id):
+    scheduling = get_object_or_404(Scheduling, pk=scheduling_id)
+
+    context = {
+        'scheduling': scheduling
+    }
+
+    return render(request, 'payment_successful.html', context)

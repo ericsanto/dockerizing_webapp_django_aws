@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'paypal.standard.ipn'
 ]
 
 MIDDLEWARE = [
@@ -151,3 +152,8 @@ TWILIO_PHONE_NUMBER = os.getenv('TWILIO_PHONE_NUMBER')
 
 
 MERCADO_PAGO_ACCESS_TOKEN = os.getenv('MERCADO_PAGO_ACCESS_TOKEN')
+
+PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID')
+PAYPAL_SECRET_KEY = os.getenv('PAYPAL_SECRET_KEY')
+PAYPAL_MODE = 'sandbox'
+CSRF_USE_SESSIONS = True

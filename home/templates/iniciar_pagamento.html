@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="checkout-mp">
+
+    <div class="img">
+        <img src="{% static 'images/mercado-pago-logo-CC340D0497-seeklogo.com.png' %}" alt="" class="img-mp">
+    </div>
+
+    <div class="title">
+        <p class="payment">PAGAMENTO COM MERCADO PAGO</p>
+        <P class="paragraph-title">100% SEGURO</P>
+    </div>
+
+    {% if preference %}
+
+        {% if 'sandbox_init_point' in preference %}
+            <a href="{{ preference.sandbox_init_point }}"><button class="button-payment">Ir para o pagamento</button></a>
+        {% else %}
+            <p>Erro ao obter a URL de pagamento </p>
+        {% endif %}
+    {% else %}
+        <p>Erro ao criar a preferência de pagamento</p>
+
+    {% endif %}
+</div>
+{% endblock %}

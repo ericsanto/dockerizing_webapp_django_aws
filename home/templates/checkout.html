@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+
+
+{% block content %}
+
+  <div class="container-checkout">
+    <div class="container-scheduling">
+      <img src="{{ scheduling.image.url }}" alt="">
+      <p>{{scheduling.service.name}}</p>
+      <p>{{scheduling.service.price}}</p>
+    </div>
+    {{paypal.render}}
+  </div>
+
+{% endblock %}

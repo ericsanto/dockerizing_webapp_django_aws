@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import *
 
+
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('create_service/', ServiceCreateView.as_view(), name='create_service'),
@@ -20,10 +21,10 @@ urlpatterns = [
     path('scheduling_to_day/', SchedulingToDay.as_view(), name='scheduling_to_day'),
     path('scheduling_to_month/', SchedulingToMonth.as_view(),
          name='scheduling_to_month'),
-    path('iniciar_pagamento/<int:scheduling_id>',
-         iniciar_pagamento, name='iniciar_pagamento'),
+    # path('iniciar_pagamento/<int:scheduling_id>',iniciar_pagamento, name='iniciar_pagamento'),
     # path('payment/<int:scheduling_id>/', payment, name='payment'),
     path('checkout/<int:scheduling_id>/', CheckOut, name='checkout'),
-    path('payment_successfull', PaymentSuccessfull, name='paymente_succesfull')
+    path('payment_successfull/<int:scheduling_id>/',
+         PaymentSuccessfull, name='payment_successfull')
 
 ]

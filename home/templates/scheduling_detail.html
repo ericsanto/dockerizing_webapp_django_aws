@@ -16,8 +16,8 @@
         <br>
         <a href="{% url 'scheduling_delete' scheduling.pk %}" class="btn-primary" id="btn">Cancelar Agemdamento</a>
         <br>
+        <a href="{% url 'checkout' scheduling.pk %}">Pagar</a>
         <br>
-        <a href="{% url 'iniciar_pagamento' scheduling.pk%}" class="btn-primary">Pagar Agora</a>
       </div>
     </div>
   </div>

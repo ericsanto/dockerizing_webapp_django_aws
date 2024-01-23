@@ -1,23 +1,17 @@
-from typing import Any
 from django.shortcuts import render, redirect
 from django.views.generic import *
 from .models import *
 from .forms import *
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 import datetime
 from datetime import datetime
 import mercadopago
-from core.settings import MERCADO_PAGO_ACCESS_TOKEN, PAYPAL_SECRET_KEY, PAYPAL_CLIENT_ID, EMAIL_HOST_USER
+from core.settings import *
 from django.shortcuts import get_object_or_404
-import json
-from django.core.serializers.json import DjangoJSONEncoder
-import hmac
-import hashlib
-from paypalrestsdk import Payment
-import paypalrestsdk
-from django.core.mail import send_mail
-from django.http import HttpResponse
+from paypal.standard.forms import PayPalPaymentsForm
+from django.conf import settings
+import uuid
 
 
 class HomeView(ListView):
@@ -155,7 +149,7 @@ class SchedulingToMonth(ListView):
         return context
 
 
-def iniciar_pagamento(request, scheduling_id):
+"""def iniciar_pagamento(request, scheduling_id):
 
     scheduling = get_object_or_404(Scheduling, pk=scheduling_id)
     sdk = mercadopago.SDK(MERCADO_PAGO_ACCESS_TOKEN)
@@ -181,7 +175,7 @@ def iniciar_pagamento(request, scheduling_id):
     else:
         preference = None
 
-    return render(request, 'iniciar_pagamento.html', {'preference':  preference})
+    return render(request, 'iniciar_pagamento.html', {'preference':  preference})"""
 
 
 """def payment(request, scheduling_id):
@@ -232,10 +226,26 @@ def iniciar_pagamento(request, scheduling_id):
 
 
 def CheckOut(request, scheduling_id):
-    scheduling = get_object_or_404(Scheduling, pk=scheduling_id)
+    scheduling = Scheduling.objects.get(id=scheduling_id)
+
+    host = request.get_host()
+
+    paypal_checkout = {
+        'business': PAYPAL_RECEIVER_EMAIL,
+        'amount': scheduling.service.price,
+        'item_name': scheduling.service.name,
+        'invoice': uuid.uuid4(),
+        'currency_code': 'BRL',
+        'notify_url': f'https://{host}{reverse("paypal-ipn")}',
+        'return_url': f'https://{host}{reverse("payment_successfull", kwargs={"scheduling_id": scheduling.id})}',
+        # 'cancel_url': f'https://{host}{reverse("payment_failed", kwargs={"scheduling_id": scheduling.id})}'
+    }
+
+    paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
 
     context = {
-        'scheduling': scheduling
+        'scheduling': scheduling,
+        'paypal': paypal_payment
     }
 
     return render(request, 'checkout.html', context)

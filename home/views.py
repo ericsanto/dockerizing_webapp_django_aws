@@ -162,7 +162,7 @@ def CheckOut(request, scheduling_id):
         'currency_code': 'BRL',
         'notify_url': f'http://{host}{reverse("paypal-ipn")}',
         'return_url': f'http://{host}{reverse("payment_successfull", kwargs={"scheduling_id": scheduling.pk})}',
-        # 'cancel_url': f'https://{host}{reverse("payment_failed", kwargs={"scheduling_id": scheduling.id})}'
+        'cancel_url': f'https://{host}{reverse("payment_failed", kwargs={"scheduling_id": scheduling.id})}'
     }
 
     paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
@@ -183,3 +183,13 @@ def PaymentSuccessfull(request, scheduling_id):
     }
 
     return render(request, 'payment_successful.html', context)
+
+
+def PaymentCancell(request, scheduling_id):
+    scheduling = get_object_or_404(Scheduling, id=scheduling_id)
+
+    context = {
+        'scheduling': scheduling
+    }
+
+    return render(request, 'cancel_payment.html', context)

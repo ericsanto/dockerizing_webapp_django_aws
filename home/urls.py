@@ -21,8 +21,6 @@ urlpatterns = [
     path('scheduling_to_day/', SchedulingToDay.as_view(), name='scheduling_to_day'),
     path('scheduling_to_month/', SchedulingToMonth.as_view(),
          name='scheduling_to_month'),
-    # path('iniciar_pagamento/<int:scheduling_id>',iniciar_pagamento, name='iniciar_pagamento'),
-    # path('payment/<int:scheduling_id>/', payment, name='payment'),
     path('checkout/<int:scheduling_id>/', CheckOut, name='checkout'),
     path('payment_successfull/<int:scheduling_id>/',
          PaymentSuccessfull, name='payment_successfull')

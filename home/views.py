@@ -160,8 +160,8 @@ def CheckOut(request, scheduling_id):
         'item_name': scheduling.service.name,
         'invoice': uuid.uuid4(),
         'currency_code': 'BRL',
-        'notify_url': f'https://{host}{reverse("paypal-ipn")}',
-        'return_url': f'https://{host}{reverse("payment_successfull", kwargs={"scheduling_id": scheduling.pk})}',
+        'notify_url': f'http://{host}{reverse("paypal-ipn")}',
+        'return_url': f'http://{host}{reverse("payment_successfull", kwargs={"scheduling_id": scheduling.pk})}',
         # 'cancel_url': f'https://{host}{reverse("payment_failed", kwargs={"scheduling_id": scheduling.id})}'
     }
 

@@ -11,12 +11,15 @@
         {% if scheduling.berber %}
         <p class="card-text">{{scheduling.barber}}</p>
         {% endif %}
+        <br>
+        <br>
         <a href="{% url 'scheduling_update' scheduling.pk %}" class="btn-primary" id="btn">Remarcar Agendamento</a>
         <br>
         <br>
-        <a href="{% url 'scheduling_delete' scheduling.pk %}" class="btn-primary" id="btn">Cancelar Agemdamento</a>
+        <a href="{% url 'scheduling_delete' scheduling.pk %}" class="btn-primary" id="btn">Cancelar Agendamento</a>
         <br>
-        <a href="{% url 'checkout' scheduling.pk %}">Pagar</a>
+        <br>
+        <a href="{% url 'checkout' scheduling.pk %}" class="btn-primary">Pagar</a>
         <br>
       </div>
     </div>

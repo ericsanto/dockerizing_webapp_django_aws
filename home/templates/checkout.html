@@ -3,10 +3,13 @@
 {% block content %}
 
   <div class="container-checkout">
+    <h2 class="title">
+      PAGAMENTO
+    </h2>
     <div class="container-scheduling">
       <img src="{{ scheduling.image.url }}" alt="">
-      <p>{{scheduling.service.name}}</p>
-      <p>{{scheduling.service.price}}</p>
+      <p class="paragraph-checkout">Serviço: {{scheduling.service.name}}</p>
+      <p class="paragraph-checkout">Valor: R${{scheduling.service.price}}</p>
     </div>
     {{paypal.render}}
   </div>

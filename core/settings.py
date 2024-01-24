@@ -157,3 +157,4 @@ PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID')
 PAYPAL_SECRET_KEY = os.getenv('PAYPAL_SECRET_KEY')
 PAYPAL_TEST = True
 PAYPAL_RECEIVER_EMAIL = os.getenv('PAYPAL_RECEIVER_EMAIL')
+PAYPAL_BUY_BUTTON_IMAGE = 'https://lavendercottagecattery.co.uk/wp-content/uploads/2022/10/CITYPNG.COMDownload-PayPal-Yellow-Payment-Button-PNG-2100x770-2.png'

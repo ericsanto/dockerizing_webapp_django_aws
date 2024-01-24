@@ -149,82 +149,6 @@ class SchedulingToMonth(ListView):
         return context
 
 
-"""def iniciar_pagamento(request, scheduling_id):
-
-    scheduling = get_object_or_404(Scheduling, pk=scheduling_id)
-    sdk = mercadopago.SDK(MERCADO_PAGO_ACCESS_TOKEN)
-
-    price = float(scheduling.service.price)
-
-    preference_data = {
-        "items": [
-            {
-                "title": scheduling.service.name,
-                "quantity": 1,
-                "currency_id": "BRL",
-                "unit_price": price,
-            }
-        ]
-    }
-
-    # Cria a preferência de pagamento
-    preference_response = sdk.preference().create(preference_data)
-    if 'response' in preference_response:
-        preference = preference_response['response']
-
-    else:
-        preference = None
-
-    return render(request, 'iniciar_pagamento.html', {'preference':  preference})"""
-
-
-"""def payment(request, scheduling_id):
-
-    paypal_client_id = PAYPAL_CLIENT_ID
-    paypal_secret_key = PAYPAL_SECRET_KEY
-
-    scheduling = get_object_or_404(Scheduling, pk=scheduling_id)
-    price = float(scheduling.service.price)
-
-    payment = Payment({
-        "intent": "sale",
-        "payer": {
-            "payment_method": "paypal"
-        },
-        "redirect_urls": {
-            "return_url": "http://localhost:8000/success/",
-            "cancel_url": "http://localhost:8000/cancel/"
-        },
-        "transactions": [{
-            "item_list": {
-                "items": [{
-                    "name": scheduling.service.name,
-                    "sku": "item123",
-                    "price": price,
-                    "currency": "BRL",
-                    "quantity": 1
-                }]
-            },
-            "amount": {
-                "total": "5.00",
-                "currency": "BRL"
-            },
-            "description": "Compra de teste"
-        }]
-    }, api=paypalrestsdk.set_config({
-        'mode': 'sandbox',  # ou 'live' para ambiente de produção
-        'client_id': paypal_client_id,
-        'client_secret': paypal_secret_key
-    }))
-
-    if payment.create():
-        # Redirecione para a URL de aprovação do PayPal
-        for link in payment.links:
-            if link.method == "REDIRECT":
-                return redirect(link.href)
-    return render(request, 'payment.html', {'payment': payment})"""
-
-
 def CheckOut(request, scheduling_id):
     scheduling = Scheduling.objects.get(id=scheduling_id)
 
@@ -237,7 +161,7 @@ def CheckOut(request, scheduling_id):
         'invoice': uuid.uuid4(),
         'currency_code': 'BRL',
         'notify_url': f'https://{host}{reverse("paypal-ipn")}',
-        'return_url': f'https://{host}{reverse("payment_successfull", kwargs={"scheduling_id": scheduling.id})}',
+        'return_url': f'https://{host}{reverse("payment_successfull", kwargs={"scheduling_id": scheduling.pk})}',
         # 'cancel_url': f'https://{host}{reverse("payment_failed", kwargs={"scheduling_id": scheduling.id})}'
     }
 

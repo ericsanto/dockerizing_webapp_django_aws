@@ -167,6 +167,12 @@ def CheckOut(request, scheduling_id):
 
     paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
 
+    if request.method == 'POST':
+        response_status = request.POST.get('state', '')
+        if response_status == 'approved':
+            scheduling.paid = True
+            scheduling.save()
+
     context = {
         'scheduling': scheduling,
         'paypal': paypal_payment

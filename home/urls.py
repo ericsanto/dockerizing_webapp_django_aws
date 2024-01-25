@@ -23,6 +23,7 @@ urlpatterns = [
          name='scheduling_to_month'),
     path('checkout/<int:scheduling_id>/', CheckOut, name='checkout'),
     path('payment_successfull/<int:scheduling_id>/',
-         PaymentSuccessfull, name='payment_successfull')
+         PaymentSuccessfull, name='payment_successfull'),
+    #path('payment_failed', PaymentCancell, name='payment_failed'),
 
 ]

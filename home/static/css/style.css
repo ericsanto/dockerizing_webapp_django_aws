@@ -979,3 +979,15 @@ p.paragraph-checkout {
   font-size: 26px;
   max-width: 100%;
 }
+
+
+div.quantity-scheduling {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h4.sub-title {
+  margin: 0 auto;
+
+}

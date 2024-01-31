@@ -64,6 +64,12 @@ class UserSchedulingListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Scheduling.objects.filter(user=self.request.user).order_by('-day')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['scheduling_count_user'] = Scheduling.objects.filter(
+            user=self.request.user, paid=True).count()
+        return context
+
 
 class UserSchedulingDetailView(LoginRequiredMixin, DetailView):
     model = Scheduling
@@ -106,9 +112,6 @@ class FinanceListView(UserPassesTestMixin, ListView):
         context = super().get_context_data(**kwargs)
         context['finance'] = Finance()
         context['scheduling'] = Scheduling()
-        context['scheduling_count_user'] = Scheduling.objects.filter(
-            user=self.request.user).count()
-
         return context
 
 

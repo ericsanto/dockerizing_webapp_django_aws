@@ -5,6 +5,7 @@ from PIL import Image
 from django.contrib import messages
 from django.db.models import Sum, Max, Count, Min
 from datetime import datetime
+from users.models import UserCustom
 
 
 class Services(models.Model):
@@ -71,10 +72,6 @@ class Scheduling(models.Model):
     barber = models.ForeignKey(
         BarbersTeam, blank=True, null=True, on_delete=models.CASCADE)
     phone = models.CharField('Celular', max_length=16, blank=True, null=True)
-    scheduling_complete = models.BooleanField(
-        default=False, blank=True, null=True)
-    scheduling_quantity = models.PositiveIntegerField(
-        default=0, blank=True, null=True)
     paid = models.BooleanField(verbose_name='Pago', default=False)
 
     def __str__(self):
@@ -91,8 +88,6 @@ class Scheduling(models.Model):
         mont_scheduling = Scheduling.objects.filter(
             day__month=month).aggregate(Count('service'))['service__count']
         return mont_scheduling
-
-  
 
 
 class Portfolio(models.Model):
@@ -120,4 +115,21 @@ class Finance(models.Model):
     def total_value(self):
         total = Scheduling.objects.filter(paid=True).aggregate(
             Sum('service__price'))['service__price__sum']
+        return total
+
+    def total_scheduling(self):
+        total = Scheduling.objects.all().count()
+        return total
+
+    def total_scheduling_paid(self):
+        total = Scheduling.objects.filter(paid=True).count()
+        return total
+
+    def total_scheduling_user(self):
+        total = UserCustom.objects.filter
+        return total
+
+    def max_value_service_scheduling(self):
+        total = Scheduling.objects.filter(paid=True).aggregate(
+            Max('service__price'))['service__price__max']
         return total

@@ -106,6 +106,8 @@ class FinanceListView(UserPassesTestMixin, ListView):
         context = super().get_context_data(**kwargs)
         context['finance'] = Finance()
         context['scheduling'] = Scheduling()
+        context['scheduling_count_user'] = Scheduling.objects.filter(
+            user=self.request.user).count()
 
         return context
 

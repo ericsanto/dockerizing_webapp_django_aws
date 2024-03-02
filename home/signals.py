@@ -25,3 +25,4 @@ def send_sms_notification(sender, instance, created, **kwargs):
 
     except Exception as e:
         print(f'Erro ao enviar mensagem{str(e)}')
+        

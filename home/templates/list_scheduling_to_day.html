@@ -1,6 +1,20 @@
 {% extends 'register.html' %}
+{% load static %}
+
+
+
+
 
 {% block content %}
+
+<script>
+  function playSound() {
+    var sound = new Audio('{% static "sounds/sound.mp3" %}');
+    sound.play();
+  }
+
+  playSound();
+</script>
 
 <div class="title-h2">
   <h2 class="title-1">Agendamentos</h2>

@@ -42,7 +42,6 @@ class SchedulingCreateView(LoginRequiredMixin, CreateView):
         if self.request.user.is_authenticated:
             form.instance.user = self.request.user
             messages.success(self.request, 'Agendamento marcado com Sucesso')
-
         return super().form_valid(form)
 
 

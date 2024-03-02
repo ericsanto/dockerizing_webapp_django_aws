@@ -4,7 +4,7 @@
 >Status: Finalizado ✔️
 
 ### Sobre o projeto
-<p>Especialmente desenvolvido para atender as necessidades exclusivas de barbearias. Utilizando o poderoso framework Django e integrando a API do Mercado Pago, este sistema proporciona uma experiência única de gerenciamento e otimização para estabelecimentos de barbearia.</p>
+<p>Especialmente desenvolvido para atender as necessidades exclusivas de barbearias. Utilizando o poderoso framework Django e integrando a API do PayPal, este sistema proporciona uma experiência única de gerenciamento e otimização para estabelecimentos de barbearia.</p>
 
 ## Recursos a se destacar:
 <ul>
@@ -22,7 +22,7 @@
     <p>Fornece ferramentas analíticas para avaliação do desempenho do negócio, incluindo relatórios financeiros, estatísticas de agendamento e muito mais</p>
   <li>Segurança e Confiabilidade 🔐</li>
     <p>Implementa práticas robustas de segurança, garantindo a proteção dos dados dos clientes e a confiabilidade das transações online</p>
-  <p>Este projeto visa não apenas otimizar os processos internos da barbearia, mas também elevar a experiência do cliente a novos patamares. Ao integrar a eficiência do Django com a confiabilidade da API do Mercado Pago, estamos proporcionando uma solução tecnológica que impulsiona o sucesso e a modernização do negócio de barbearias. Estou animado para compartilhar mais detalhes sobre essa iniciativa inovadora e continuarei buscando aprimorar e expandir suas funcionalidades</p>
+  <p>Este projeto visa não apenas otimizar os processos internos da barbearia, mas também elevar a experiência do cliente a novos patamares. Ao integrar a eficiência do Django com a confiabilidade da API do PayPal, estamos proporcionando uma solução tecnológica que impulsiona o sucesso e a modernização do negócio de barbearias. Estou animado para compartilhar mais detalhes sobre essa iniciativa inovadora e continuarei buscando aprimorar e expandir suas funcionalidades</p>
 </ul>
 
 ## Instalação ⬇️

@@ -133,3 +133,10 @@ class Finance(models.Model):
         total = Scheduling.objects.filter(paid=True).aggregate(
             Max('service__price'))['service__price__max']
         return total
+
+    def total_scheduling_at_year(self):
+        date = datetime.now()
+        year = date.year
+        year_scheduling = Scheduling.objects.filter(day__year=year, paid=True).aggregate(
+            Sum('service__price'))['service__price__sum']
+        return year_scheduling

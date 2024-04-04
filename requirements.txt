@@ -20,7 +20,7 @@ packaging==23.2
 paypalrestsdk==1.13.3
 phonenumbers==8.13.27
 pillow==10.2.0
-psycopg2==2.9.9
+psycopg2-binary==2.9.9
 pycparser==2.21
 PyJWT==2.8.0
 pyOpenSSL==24.0.0

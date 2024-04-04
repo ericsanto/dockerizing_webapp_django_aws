@@ -1,6 +1,5 @@
 {% extends 'register.html' %}
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +64,9 @@
         <h2 class="h2-2">Serviços</h2>
       </div>
 
+      {% if services %}
       <div class="container-home">
+        
         {% for service in services %}
           <div class="circle-card">
             {% if service.image %}
@@ -79,6 +80,7 @@
           </div>
         {% endfor %}
       </div>
+      {% endif %}
   
 
       <div class="container-leisure">

@@ -1,0 +1,993 @@
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 0;
+  min-height: auto;
+  overflow: auto;
+
+}
+
+
+
+#title {
+  flex-direction: column;
+}
+
+/* ESTILO DA PÁGINA 'register.html'*/
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #222222;
+}
+
+.container-logo {
+  width: 60%;
+}
+
+#first-title {
+  color: rgb(153,50,204);
+}
+
+
+article {
+  margin-top: 10px;
+  max-width: 50%;
+
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  align-items: center;
+}
+
+#inscreva-se-btn {
+  border: 2px solid  rgb(153,50,204);
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  margin: 0 auto;
+}
+
+#inscreva-se-btn:hover{
+  background-color:  rgb(153,50,204);
+}
+
+
+.logo-header {
+  width: 30%;
+}
+
+li {
+  display: inline-block;
+}
+
+.home {
+  margin: 0;
+  padding-left: 0;
+  padding: 10px;
+  width: 50%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+a:hover{
+  color: black;
+  transition: 0.3s all;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+input {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+p {
+  max-width: 70%;
+  line-height: 20px;
+}
+
+h2 {
+  font-size: 50px;
+  font-family: 'Rubik Doodle Shadow';
+  line-height: 10px;
+}
+
+.btn-submit{
+  background-color: rgb(132,14,201);
+  color: white;
+  font-family: 'Rubik Doodle Shadow';
+  width: 50%;
+}
+
+.btn-submit:hover {
+  background-color: rgb(153,50,204);
+  transition: 0.3s all;
+}
+
+ul.ul-2 {
+  padding: 0px;
+}
+
+.ul{
+  display: flex;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #222222;
+}
+
+.main-options {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.link-btn-footer {
+  line-height: 0;
+  cursor: pointer;
+}
+
+.btn-option-footer {
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  justify-content: center;
+  cursor: pointer;
+  
+}
+
+.contact-options {
+  text-align: center;
+  line-height: 10px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.btn-social-media {
+  color: white;
+  display: inline-block;
+  padding: 10px;
+}
+
+
+.text-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-contact-footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+}
+
+
+
+.social-media-footer {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.btn-option-footer:hover {
+  color: black;
+  transition: 0.3s all;
+}
+
+
+.btn-social-media:hover{
+  color: black;
+
+}
+
+.form-form-login {
+  width: 50%;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 30px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.input-form-login {
+  width: 20%;
+}
+
+.title-login {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+
+/* FIM DA PÁGINA 'register' */
+
+
+
+/* ESTILO DA PÁGINA 'home.html' */
+#div-services {
+  display: flex;
+  justify-content: center;
+}
+
+.img-home {
+  border-radius: 30px;
+  width: 100%;
+  height: 90%;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(34, 34, 34);
+  margin: 30px;
+  border-radius: 30px;
+}
+
+.btn-options{
+  padding: 20px;
+}
+
+.title-h2 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.container-home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  padding-top: 30px;
+  max-width: 70%;
+}
+
+
+.circle-card {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 100px;
+  
+}
+
+.circle-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.container-leisure {
+  background-image: url("https://i.pinimg.com/originals/f3/e2/4d/f3e24d37faf7feb883850faf90deec09.jpg");
+  background-size: contain;
+  background-position: center;
+  max-height: 500px;
+  padding: 10px;
+  padding-bottom: 15%;
+ 
+}
+
+.title-h2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+h2.h2-1 {
+  padding-right: 20px;
+}
+
+.title-leisure {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.satisfaction-title {
+  color:  rgb(153,50,204);
+  padding-left: 10px;
+}
+
+.guarantee, .maintenance, .pacotes, .gift  {
+  max-width: 400px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title-border {
+  border: 2px solid ;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.paragraph {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.circle-img img {
+  width: 100%;
+  height: 100%;
+  
+}
+
+
+.satisfaction {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+
+#service-card {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.btn-options:hover {
+  background-color:  black;
+  border-radius: 30px;
+  color: white;
+  transition: 0.3s all;
+}
+
+a.custom-button {
+  padding: 0px;
+  width: 40px;
+}
+
+.custom-button {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 0;
+  width: 10px;
+  
+}
+
+form.logout {
+  width: 10%;
+}
+/* FIM DA PÁGINA 'home.html' */
+
+
+
+/* ESTILO DA PÁGINA 'scheduling.html' */
+.form-scheduling {
+  display: flex;
+  justify-content: center;
+}
+
+.form-scheduling-form {
+  width: 30%;
+  padding-top: 50px;
+}
+
+.scheduling-title {
+  margin: 30px;
+  font-size: 40px;
+  padding-top: 20px;
+}
+
+/* FIM DA PÁGINA 'scheduling.html' */
+
+
+
+/* ESTILO DA PÁGINA 'scheduling_detail.html' */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: center;
+  margin: 50px;
+
+}
+
+.card {
+  width: 30%;
+  padding-bottom: 80px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 50%;
+}
+
+.card-img-top {
+  width: 18rem;
+  height: 70%;
+  border-radius: 20px;
+  padding-top: 20px;
+}
+
+.card-price {
+  font-size: 15px;
+}
+
+.card:hover {
+  background-color: rgb(153,50,204);
+  transition: 0.8s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+p {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#btn {
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  color: white;
+  background-color:black;
+  border-radius: 20px;
+  padding: 10px;
+}
+/* FIM DA PÁGINA 'scheduling_detail.html' */
+
+
+
+/* ESTILO DA PÁGINA 'scheduling_delete.html' */
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+
+.paragraph-delete {
+  margin: 0;
+}
+
+
+.submit-btn {
+  width: 30%;
+}
+
+.submit-btn:hover {
+  background-color: rgb(153,50,204);
+  color: white;
+  transition: 0.3s;
+}
+
+.confirm-delete {
+  width: 30%;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.confirm-delete:hover {
+  color: white;
+  background-color: rgb(153,50,204);
+  cursor: pointer;
+  transition: 0.3s
+}
+
+.cancel-delete {
+  border-radius: 20px;
+  padding: 10px;
+  width: 30%;
+}
+
+.cancel-delete:hover {
+  color: white;
+  background-color: rgb(153,50,204);
+  cursor: pointer;
+  transition: 0.3s
+}
+
+.container-portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.description {
+  padding-bottom: 30px;
+}
+
+.img-portfolio {
+  border-radius: 10px;
+
+}
+/* FIM DA PÁGINA 'scheduling_delete.html' */
+
+
+
+/* ESTILO DA PÁGINA 'finances.html' */
+#table {
+  padding: 30px;
+  color: white;
+  align-items: center;
+}
+
+.th {
+  padding: 20px;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.container-all-schedulings {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.total-value-finance {
+  text-align: center;
+}
+/* FIM DA PÁGINA 'finances.html' */
+
+
+
+/* ESTILO DA PÁGINA 'scheduling_update.html' */
+.form-update {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.submit-btn {
+  padding: 20px;
+  width: 50%;
+  margin-top: 50px;
+}
+
+/* FIM DA PÁGINA 'scheduling_update.html' */
+
+
+/* RESPONSIVIDADE DA PÁGINA HOME*/
+
+@media screen and (max-width:865px){
+
+  header {
+    flex-direction: column;
+  }
+
+
+  li {
+    display: block;
+
+  }
+
+  .options{
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+
+  .ul {
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  ul.ul {
+    padding: 0px;
+  }
+
+  ul.home {
+    text-align: center;
+  }
+
+  .logo-header {
+    width: 100%;
+  }
+
+  img.img-home {
+    padding-bottom: 20px;
+  }
+
+  #div-services {
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title-h2 {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+
+  }
+
+  .h2 {
+    margin: 0;
+    padding: 50px;
+    gap: 50px;
+  }
+
+  div.container-leisure {
+    display: flex;
+    flex-direction: column;
+    max-height: 1400px;
+  }
+
+  .title-leisure {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .satisfaction-title {
+    margin-top: 0;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0%;
+  }
+
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+  }
+
+  ul.ul-2 {
+    padding: 0px;
+  }
+}
+
+
+/* RESPONSIVIDADE DA PÁGINA user_scheduling*/
+
+@media screen and (max-width:865px){
+  
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  h5.card-title {
+    font-size: 20px;
+  }
+
+  p.card-text {
+    font-size: 20px;
+    padding-bottom: 30px;
+  }
+
+  a.btn.btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .scheduling-title-2 {
+    margin: 30px;
+    font-size: 40px;
+  }
+
+  div.form-scheduling {
+    width: 100%;
+  }
+
+  form.form-scheduling-form {
+    width: 100%;
+    padding: 30px;
+  }
+
+  div.container-fluid {
+    width: 100%;
+  }
+
+  form.form-update {
+    width: 100%;
+  }
+
+  .submit-btn {
+    width: 55%;
+  }
+
+  .title-delete-form {
+    text-align: center;
+  }
+
+
+  p.paragraph-delete {
+    text-align: center;
+  }
+
+  h2.title-1, .title-2 {
+    font-size: 40px;
+  }
+
+
+  table#table {
+    margin: 10px;
+  }
+
+  .form-form-login {
+    margin: 0 auto;
+    justify-content: center;
+    padding: 30px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+
+  .input-form-login {
+    width: 50%;
+  }
+
+  .title-login {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+
+
+@media screen and (max-width:1030px){
+  .container-leisure {
+    max-height: 1600px;
+  }
+
+}
+
+
+/* ESTILIZAÇÃO DAS PÁGINAS DE REDEFINIÇÃO DE SENHA*/
+div.form-reset {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+form.form-password-reset {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+
+}
+
+input.reset {
+  max-width: 40%;
+
+}
+
+input.reset:hover {
+  background-color: rgb(153,50,204);
+  color: white;
+  transition: 0.3s;
+}
+
+label.label-reset {
+  text-align: left;
+}
+
+input#id_email.form-control {
+  width: 100%;
+  max-width: 100%;
+}
+
+.container-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 100px;
+
+}
+
+p.reset-p {
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 50px;
+}
+
+div.container-fluid-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding: 50px;
+  margin: 0 auto;
+  max-width: 60%;
+}
+
+div.btn-submit-reset-password {
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+  margin-left: 60px;
+
+}
+
+div.container-success {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 100px;
+
+}
+
+input.input-form-login:hover {
+  background-color: rgb(153,50,204);
+  transition: 0.3s;
+  color: white;
+}
+
+a.a-password-reset:hover {
+  color: #222222;
+}
+
+div.form-month {
+  display: flex;
+  max-width: 60%;
+}
+
+.form-month-form {
+  width: 40%;
+  margin: 40px;
+}
+
+select#selct-form {
+  margin-bottom: 20px;
+}
+
+.btn-form-month {
+  width: 40%;
+  padding: 10px;
+}
+
+.btn-form-month:hover {
+  background-color: rgb(153,50,204);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+/* ESTILIZAÇÃO DA PÁGINA DE 'CHECKOUT.HTML'*/
+
+/*FIM DA ESTILIZAÇÃO DA PÁGINA 'CHECKOUT.HTML'*/
+
+div.payment-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.title-payment {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+div.paragraph-payment {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  max-width: 50%;
+  padding-bottom: 100px;
+}
+
+div.container-checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+p.paragraph-checkout {
+  font-size: 26px;
+  max-width: 100%;
+}
+
+
+div.quantity-scheduling {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h4.sub-title {
+  margin: 0 auto;
+
+}

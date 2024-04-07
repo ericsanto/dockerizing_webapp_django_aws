@@ -1,0 +1,2 @@
+uwsgi --socket /var/www/barbearia_django/barbearia.sock --module core.wsgi --chmod-socket=666
+

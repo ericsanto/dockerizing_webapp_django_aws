@@ -722,7 +722,11 @@ p {
 /* RESPONSIVIDADE DA PÁGINA user_scheduling*/
 
 @media screen and (max-width:865px){
-  
+  .inscreva-se-btn {
+    border: none;
+  }
+
+
   .container {
     flex-direction: column;
     justify-content: center;

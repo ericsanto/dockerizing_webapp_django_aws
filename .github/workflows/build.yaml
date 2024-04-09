@@ -27,9 +27,6 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: |
-          cd /var/www/barbearia_django
-          source venv/bin/activate
     - name: Copy code to EC2
       uses: appleboy/scp-action@master
       with:

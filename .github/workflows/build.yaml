@@ -30,3 +30,4 @@ jobs:
         REMOTE_HOST: "ec2-54-242-116-91.compute-1.amazonaws.com"
         REMOTE_USER: "ubuntu"
         target: /var/www/barbearia_django
+        
